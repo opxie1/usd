@@ -21,7 +21,7 @@ tables/     (econometric output, to come)
 
 ## Data
 
-- **Source:** FRED (Federal Reserve Bank of St. Louis), pulled via the FRED API. Some Federal Reserve balance-sheet and Z.1 Financial Accounts series are mirrored on FRED; where a series is better taken from the Board's Data Download Program (Z.1), this is noted in the catalog.
+- **Source:** FRED (Federal Reserve Bank of St. Louis), pulled via the FRED API. Interest rates by sector follow Prof. Gmeiner's method — interest payments divided by debt — using NIPA interest series (BEA tables 1.10, 2.1, 3.2, 3.3, mirrored on FRED with full history and cross-validated against the BEA downloads in `data/raw/bea/`). Some Federal Reserve balance-sheet and Z.1 Financial Accounts series are mirrored on FRED; where a series is better taken from the Board's Data Download Program (Z.1), this is noted in the catalog.
 - **Frequency:** quarterly (per Prof. Gmeiner). The aggregation rule (average for rates/prices, end-of-quarter for stocks) and all derived variables are documented in [`catalog/variable_catalog.md`](catalog/variable_catalog.md).
 - **Coverage:** 1959Q1-2026Q2 where available; individual series coverage is in the catalog.
 
@@ -30,26 +30,27 @@ tables/     (econometric output, to come)
 - Money supply: M2 less monetary base (plus reserves)
 - Inflation: CPI, PCE, PPI, GDP deflator (index levels and computed rates)
 - Real output control: real GDP (plus alternates)
-- Five interest rates: federal, state/local, mortgage, business, consumer/personal
-- Five debt categories: federal, state/local, mortgage, business, consumer/personal
+- Five interest rates: federal, state/local, business, consumer (implied = NIPA interest / debt) and mortgage (30y market rate, MORTGAGE30US, per Prof. Gmeiner)
+- Five debt categories: federal (GFDEBTN), state/local (SLGSDODNS), mortgage (HHMSDODNS), business (BCNSDODNS), consumer (TOTALSL)
 - Federal Reserve balance sheet: total assets, Treasuries, MBS
 - Bank credit (thesis variables): total bank credit, loans and leases, C&I, real estate, consumer loans
 
 ### Known data issues (see catalog for detail)
 
-1. The standard municipal yield (`MSLB20`) was discontinued in 2016Q3; there is no current municipal rate on FRED. Needs a sourcing decision.
+1. The state/local implied rate runs high (~7-8%) because NIPA state/local interest includes public-pension actuarial interest (BEA Table 3.3 note 1); the federal implied rate carries the same pension component but is dominated by its large debt base. The business implied rate uses net (not gross) interest. See the catalog's open-data-issues section — these need a decision from Prof. Gmeiner.
 2. Fed balance-sheet series begin 2002Q4, which caps any specification that uses them.
-3. Z.1 debt levels lag about one quarter.
+3. Z.1 debt levels lag about one quarter (latest 2025Q4), so federal/state-local/business implied rates end 2025Q4; the consumer implied rate reaches 2026Q1.
 
 ## Reproduce
 
 Requires Python 3 with `pandas`, `numpy`, `matplotlib`.
 
 ```
-python scripts/fetch_fred.py        # pull data, build panels + catalog CSV
-python scripts/make_catalog_md.py   # render catalog markdown
-python scripts/make_plots.py        # render the five figures
-python scripts/check_panel.py       # coverage + recent-values QA
+python scripts/discover_nipa_interest.py  # validate NIPA interest series against BEA downloads
+python scripts/fetch_fred.py              # pull data, build panels + catalog CSV
+python scripts/make_catalog_md.py         # render catalog markdown
+python scripts/make_plots.py              # render the six figures
+python scripts/check_panel.py             # coverage + recent-values QA
 ```
 
-The FRED API key is currently set inline in the fetch script; it can be moved to an environment variable before any public release.
+The FRED API key is read from the `FRED_API_KEY` environment variable or from `config/fred_api_key.txt` (gitignored); it is not committed to the repository.

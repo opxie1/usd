@@ -70,11 +70,11 @@ SERIES = [
 
     dict(name="debt_state_local", fred_id="SLGSDODNS", group="debt_state_local", agg="last", role="stock", status="primary"),
 
-    dict(name="debt_mortgage_total", fred_id="ASTMA", group="debt_mortgage", agg="last", role="stock", status="primary"),
-    dict(name="debt_mortgage_household", fred_id="HHMSDODNS", group="debt_mortgage", agg="last", role="stock", status="alternate"),
+    dict(name="debt_mortgage_household", fred_id="HHMSDODNS", group="debt_mortgage", agg="last", role="stock", status="primary"),
+    dict(name="debt_mortgage_total", fred_id="ASTMA", group="debt_mortgage", agg="last", role="stock", status="alternate"),
 
-    dict(name="debt_business", fred_id="TBSDODNS", group="debt_business", agg="last", role="stock", status="primary"),
-    dict(name="debt_business_corporate", fred_id="BCNSDODNS", group="debt_business", agg="last", role="stock", status="alternate"),
+    dict(name="debt_business_corporate", fred_id="BCNSDODNS", group="debt_business", agg="last", role="stock", status="primary"),
+    dict(name="debt_business", fred_id="TBSDODNS", group="debt_business", agg="last", role="stock", status="alternate"),
 
     dict(name="debt_consumer_credit", fred_id="TOTALSL", group="debt_consumer", agg="last", role="stock", status="primary"),
     dict(name="debt_household_total", fred_id="CMDEBT", group="debt_consumer", agg="last", role="stock", status="alternate"),
@@ -89,6 +89,11 @@ SERIES = [
     dict(name="bank_ci_loans", fred_id="BUSLOANS", group="bank_credit", agg="last", role="stock", status="alternate"),
     dict(name="bank_realestate_loans", fred_id="REALLN", group="bank_credit", agg="last", role="stock", status="alternate"),
     dict(name="bank_consumer_loans", fred_id="CONSUMER", group="bank_credit", agg="last", role="stock", status="alternate"),
+
+    dict(name="int_federal", fred_id="A091RC1Q027SBEA", group="nipa_interest", agg="avg", role="flow", status="primary"),
+    dict(name="int_state_local", fred_id="B111RC1Q027SBEA", group="nipa_interest", agg="avg", role="flow", status="primary"),
+    dict(name="int_business", fred_id="W272RC1Q027SBEA", group="nipa_interest", agg="avg", role="flow", status="primary"),
+    dict(name="int_personal", fred_id="B069RC1Q027SBEA", group="nipa_interest", agg="avg", role="flow", status="primary"),
 ]
 
 
@@ -133,6 +138,28 @@ def to_quarterly(s, agg):
     r = s.resample("QE")
     out = r.mean() if agg == "avg" else r.last()
     return out
+
+
+def add_derived(df):
+    if "m2" in df and "monetary_base" in df:
+        df["m2_less_base"] = df["m2"] - df["monetary_base"]
+    for idx_name in ["cpi", "pce_price", "ppi_allcommodities", "gdp_deflator"]:
+        if idx_name in df:
+            x = df[idx_name].astype(float)
+            df[f"infl_{idx_name}_qoq_ann"] = 400.0 * (np.log(x) - np.log(x.shift(1)))
+            df[f"infl_{idx_name}_yoy"] = 100.0 * (x / x.shift(4) - 1.0)
+    implied = [
+        ("rate_federal_implied", "int_federal", "debt_federal"),
+        ("rate_state_local_implied", "int_state_local", "debt_state_local"),
+        ("rate_business_implied", "int_business", "debt_business_corporate"),
+        ("rate_consumer_implied", "int_personal", "debt_consumer_credit"),
+    ]
+    for out, num, den in implied:
+        if num in df and den in df:
+            df[out] = df[num] / (df[den].astype(float) / 1000.0) * 100.0
+    if "int_business" in df and "debt_business" in df:
+        df["rate_business_implied_nonfin"] = df["int_business"] / (df["debt_business"].astype(float) / 1000.0) * 100.0
+    return df
 
 
 def main():
@@ -183,14 +210,7 @@ def main():
         last_valid = panel[core_cols].dropna(how="all").index.max()
         panel = panel.loc[:last_valid]
 
-    if "m2" in panel and "monetary_base" in panel:
-        panel["m2_less_base"] = panel["m2"] - panel["monetary_base"]
-
-    for idx_name in ["cpi", "pce_price", "ppi_allcommodities", "gdp_deflator"]:
-        if idx_name in panel:
-            x = panel[idx_name].astype(float)
-            panel[f"infl_{idx_name}_qoq_ann"] = 400.0 * (np.log(x) - np.log(x.shift(1)))
-            panel[f"infl_{idx_name}_yoy"] = 100.0 * (x / x.shift(4) - 1.0)
+    panel = add_derived(panel)
 
     panel_out = panel.copy()
     panel_out.insert(0, "quarter", panel_out.index.to_period("Q").astype(str))
@@ -198,13 +218,7 @@ def main():
 
     primary_panel = pd.DataFrame(quarterly_primary).sort_index()
     primary_panel.index.name = "quarter_end"
-    if "m2" in primary_panel and "monetary_base" in primary_panel:
-        primary_panel["m2_less_base"] = primary_panel["m2"] - primary_panel["monetary_base"]
-    for idx_name in ["cpi", "pce_price", "ppi_allcommodities", "gdp_deflator"]:
-        if idx_name in primary_panel:
-            x = primary_panel[idx_name].astype(float)
-            primary_panel[f"infl_{idx_name}_qoq_ann"] = 400.0 * (np.log(x) - np.log(x.shift(1)))
-            primary_panel[f"infl_{idx_name}_yoy"] = 100.0 * (x / x.shift(4) - 1.0)
+    primary_panel = add_derived(primary_panel)
     primary_panel.insert(0, "quarter", primary_panel.index.to_period("Q").astype(str))
     primary_panel.to_csv(os.path.join(PROC, "quarterly_panel_primary.csv"))
 

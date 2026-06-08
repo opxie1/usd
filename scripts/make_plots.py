@@ -79,21 +79,42 @@ def fig_debt(df):
 def fig_rates(df):
     fig, ax = plt.subplots(figsize=(10, 5.5))
     rates = [
-        ("rate_federal_10y", "Federal (10y Treasury)"),
-        ("rate_state_local_muni", "State and local (muni, ends 2016)"),
-        ("rate_mortgage_30y", "Mortgage (30y)"),
-        ("rate_business_baa", "Business (Baa corporate)"),
-        ("rate_consumer_personal24m", "Consumer (personal 24m)"),
+        ("rate_federal_implied", "Federal (implied)"),
+        ("rate_state_local_implied", "State and local (implied)"),
+        ("rate_mortgage_30y", "Mortgage (30y market)"),
+        ("rate_business_implied", "Business (implied)"),
+        ("rate_consumer_implied", "Consumer (implied)"),
     ]
     for col, lab in rates:
         if col in df:
             ax.plot(df.index, df[col], label=lab, linewidth=1.3)
-    ax.set_title("Interest Rates by Category")
+    ax.set_title("Interest Rates by Category (implied = NIPA interest / debt)")
     ax.set_ylabel("Percent")
     ax.set_xlabel("Quarter")
     ax.legend()
     ax.grid(True, alpha=0.3)
     save(fig, "fig4_interest_rates.png")
+
+
+def fig_rate_compare(df):
+    pairs = [
+        ("Federal", "rate_federal_implied", "rate_federal_10y", "10y Treasury"),
+        ("State and local", "rate_state_local_implied", "rate_state_local_muni", "Muni (ends 2016)"),
+        ("Business", "rate_business_implied", "rate_business_baa", "Baa corporate"),
+        ("Consumer", "rate_consumer_implied", "rate_consumer_personal24m", "Personal 24m"),
+    ]
+    fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+    for ax, (title, imp, mkt, mktlab) in zip(axes.ravel(), pairs):
+        if imp in df:
+            ax.plot(df.index, df[imp], label="Implied (NIPA / debt)", linewidth=1.3)
+        if mkt in df:
+            ax.plot(df.index, df[mkt], label=mktlab, linewidth=1.3, alpha=0.8)
+        ax.set_title(title)
+        ax.set_ylabel("Percent")
+        ax.legend(fontsize=8)
+        ax.grid(True, alpha=0.3)
+    fig.suptitle("Implied rates (interest / debt) vs market rates")
+    save(fig, "fig6_implied_vs_market.png")
 
 
 def fig_fed(df):
@@ -122,7 +143,8 @@ def main():
     fig_debt(df)
     fig_rates(df)
     fig_fed(df)
-    print("wrote 5 figures to", FIG)
+    fig_rate_compare(df)
+    print("wrote 6 figures to", FIG)
 
 
 if __name__ == "__main__":

@@ -17,14 +17,24 @@ Metadata below (title, units, frequency, coverage) is captured live from the API
 - `infl_<index>_qoq_ann` = 400 x (ln P_t - ln P_(t-1)); annualized quarterly inflation.
 - `infl_<index>_yoy` = 100 x (P_t / P_(t-4) - 1); year-over-year inflation.
 
+**Implied interest rates (per Prof. Gmeiner: interest payments divided by debt).** Computed as annual NIPA interest payment (SAAR, billions) divided by the end-of-quarter debt stock (converted to billions), times 100, giving an annualized weighted-average rate in percent:
+- `rate_federal_implied` = `int_federal` (A091RC1Q027SBEA) / `debt_federal` (GFDEBTN)
+- `rate_state_local_implied` = `int_state_local` (B111RC1Q027SBEA) / `debt_state_local` (SLGSDODNS)
+- `rate_business_implied` = `int_business` (W272RC1Q027SBEA) / `debt_business_corporate` (BCNSDODNS)
+- `rate_consumer_implied` = `int_personal` (B069RC1Q027SBEA) / `debt_consumer_credit` (TOTALSL)
+- `rate_business_implied_nonfin` = `int_business` / `debt_business` (TBSDODNS); broader-business alternate.
+- Mortgage rate uses the market series `rate_mortgage_30y` (MORTGAGE30US) per Prof. Gmeiner, since long mortgage durations make a current rate more informative than a weighted average.
+
 **status:** `primary` = series intended for the baseline specification; `alternate` = comparable series kept for robustness and selection, per Prof. Gmeiner's note that the best of several similar series will become clear during the econometrics.
 
 ## Open data issues
 
-1. **State/local (municipal) interest rate has no current FRED series.** The standard Bond Buyer GO 20-Bond Municipal Bond Index (`MSLB20`) was discontinued in 2016Q3, so the panel has no municipal yield after 2016. Options: (a) source a municipal yield elsewhere (Bond Buyer, ICE/S&P municipal indices) for 2016-present; (b) proxy with a high-grade series; or (c) drop the state/local rate from the rate VAR and keep only the state/local debt level. Needs a decision from Prof. Gmeiner.
-2. **Federal Reserve balance-sheet series begin 2002Q4** (weekly H.4.1). Any specification including Fed total assets / securities held is capped at a 2002Q4 start. Pre-2002 detail would require Z.1 or historical Board tables.
-3. **Z.1 Financial Accounts (most debt levels) lag about one quarter,** so the most recent quarter is partial for debt variables.
-4. **Several rate series are not seasonally adjusted (NSA);** see the `SA` column. The TERMCB consumer rates are reported on a quarterly cadence (Feb/May/Aug/Nov).
+1. **State/local implied rate is biased high by pension interest.** BEA Table 3.3 footnote 1: state/local 'interest payments' includes interest accrued on the actuarial liabilities of defined-benefit public pension plans. Dividing this by the muni bond debt base (`SLGSDODNS`) yields about 7-8%, well above market municipal yields of roughly 3-4%. Options: (a) net out the pension-interest component; (b) use a market muni yield (the Bond Buyer GO 20-Bond index `MSLB20`, which ends 2016Q3); or (c) accept the NIPA-implied series as a broad cost-of-funds index. Needs a decision from Prof. Gmeiner.
+2. **Federal implied rate also contains pension interest** (BEA Table 3.2 footnote 4: federal-employee DB pension interest), but the very large debt base makes the relative effect small; the federal implied rate of about 3.2% is consistent with the average rate on total public debt.
+3. **Business implied rate uses NET interest and miscellaneous payments** (domestic industries), not gross interest, and the interest concept spans domestic private industries while the debt base is nonfinancial corporate (`BCNSDODNS`). Treat it as a cost-of-funds index rather than a precise contractual rate; `rate_business_implied_nonfin` (over `TBSDODNS`) is provided as an alternate.
+4. **Federal Reserve balance-sheet series begin 2002Q4** (weekly H.4.1). Any specification including Fed total assets / securities held is capped at a 2002Q4 start.
+5. **Z.1 Financial Accounts (debt levels) lag about one quarter.** The latest debt point is 2025Q4, so the federal, state/local, and business implied rates end 2025Q4; the consumer implied rate extends to 2026Q1 because consumer credit (`TOTALSL`) is monthly.
+6. **Several market rate series are not seasonally adjusted (NSA);** see the `SA` column. The TERMCB consumer rates are reported on a quarterly cadence (Feb/May/Aug/Nov).
 
 ## Money Supply and Reserves
 
@@ -111,21 +121,21 @@ Metadata below (title, units, frequency, coverage) is captured live from the API
 
 | status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
 |---|---|---|---|---|---|---|---|---|
-| primary | `debt_mortgage_total` | `ASTMA` | All Sectors; Total Mortgages; Asset, Level | Millions of U.S. Dollars | Quarterly, End of Period | NSA | 1945-10-01 .. 2025-10-01 | last |
-| alternate | `debt_mortgage_household` | `HHMSDODNS` | Households and Nonprofit Organizations; One-to-Four-Family Residential Mortgages; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2025-10-01 | last |
+| primary | `debt_mortgage_household` | `HHMSDODNS` | Households and Nonprofit Organizations; One-to-Four-Family Residential Mortgages; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2025-10-01 | last |
+| alternate | `debt_mortgage_total` | `ASTMA` | All Sectors; Total Mortgages; Asset, Level | Millions of U.S. Dollars | Quarterly, End of Period | NSA | 1945-10-01 .. 2025-10-01 | last |
 
 ## Debt: Business
 
 | status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
 |---|---|---|---|---|---|---|---|---|
-| primary | `debt_business` | `TBSDODNS` | Nonfinancial Business; Debt Securities and Loans; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2025-10-01 | last |
-| alternate | `debt_business_corporate` | `BCNSDODNS` | Nonfinancial Corporate Business; Debt Securities and Loans; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2025-10-01 | last |
+| primary | `debt_business_corporate` | `BCNSDODNS` | Nonfinancial Corporate Business; Debt Securities and Loans; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2025-10-01 | last |
+| alternate | `debt_business` | `TBSDODNS` | Nonfinancial Business; Debt Securities and Loans; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2025-10-01 | last |
 
 ## Debt: Consumer/Personal
 
 | status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
 |---|---|---|---|---|---|---|---|---|
-| primary | `debt_consumer_credit` | `TOTALSL` | Total Consumer Credit Owned and Securitized | Millions of U.S. Dollars | Monthly | SA | 1943-01-01 .. 2026-03-01 | last |
+| primary | `debt_consumer_credit` | `TOTALSL` | Total Consumer Credit Owned and Securitized | Millions of U.S. Dollars | Monthly | SA | 1943-01-01 .. 2026-04-01 | last |
 | alternate | `debt_household_total` | `CMDEBT` | Households and Nonprofit Organizations; Debt Securities and Loans; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2025-10-01 | last |
 
 ## Federal Reserve Balance Sheet
@@ -141,8 +151,17 @@ Metadata below (title, units, frequency, coverage) is captured live from the API
 
 | status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
 |---|---|---|---|---|---|---|---|---|
-| primary | `bank_credit_total` | `TOTBKCR` | Bank Credit, All Commercial Banks | Billions of U.S. Dollars | Weekly, Ending Wednesday | SA | 1973-01-03 .. 2026-05-20 | last |
+| primary | `bank_credit_total` | `TOTBKCR` | Bank Credit, All Commercial Banks | Billions of U.S. Dollars | Weekly, Ending Wednesday | SA | 1973-01-03 .. 2026-05-27 | last |
 | alternate | `bank_ci_loans` | `BUSLOANS` | Commercial and Industrial Loans, All Commercial Banks | Billions of U.S. Dollars | Monthly | SA | 1947-01-01 .. 2026-04-01 | last |
 | alternate | `bank_consumer_loans` | `CONSUMER` | Consumer Loans, All Commercial Banks | Billions of U.S. Dollars | Monthly | SA | 1947-01-01 .. 2026-04-01 | last |
-| alternate | `bank_loans_leases` | `TOTLL` | Loans and Leases in Bank Credit, All Commercial Banks | Billions of U.S. Dollars | Weekly, Ending Wednesday | SA | 1973-01-03 .. 2026-05-20 | last |
+| alternate | `bank_loans_leases` | `TOTLL` | Loans and Leases in Bank Credit, All Commercial Banks | Billions of U.S. Dollars | Weekly, Ending Wednesday | SA | 1973-01-03 .. 2026-05-27 | last |
 | alternate | `bank_realestate_loans` | `REALLN` | Real Estate Loans, All Commercial Banks | Billions of U.S. Dollars | Monthly | SA | 1947-01-01 .. 2026-04-01 | last |
+
+## NIPA Interest Payments (for implied rates)
+
+| status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
+|---|---|---|---|---|---|---|---|---|
+| primary | `int_business` | `W272RC1Q027SBEA` | Gross domestic income: Net operating surplus: Private enterprises: Net interest and miscellaneous payments, domestic industries | Billions of Dollars | Quarterly | SAAR | 1947-01-01 .. 2026-01-01 | avg |
+| primary | `int_federal` | `A091RC1Q027SBEA` | Federal government current expenditures: Interest payments | Billions of Dollars | Quarterly | SAAR | 1947-01-01 .. 2026-01-01 | avg |
+| primary | `int_personal` | `B069RC1Q027SBEA` | Personal interest payments | Billions of Dollars | Quarterly | SAAR | 1947-01-01 .. 2026-01-01 | avg |
+| primary | `int_state_local` | `B111RC1Q027SBEA` | State and local government current receipts: Interest payments | Billions of Dollars | Quarterly | SAAR | 1947-01-01 .. 2026-01-01 | avg |

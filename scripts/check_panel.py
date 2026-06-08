@@ -20,11 +20,11 @@ for c in panel.columns:
     else:
         print(f"{c:32s} EMPTY")
 
-show = ["quarter", "m2", "monetary_base", "m2_less_base", "fed_total_assets",
-        "rate_fedfunds_policy", "rate_federal_10y", "rate_mortgage_30y",
-        "rate_business_baa", "rate_consumer_personal24m", "rate_state_local_muni",
-        "debt_federal", "debt_business", "debt_consumer_credit", "real_gdp",
-        "infl_cpi_yoy", "infl_pce_price_yoy", "infl_gdp_deflator_yoy"]
+show = ["quarter", "rate_federal_implied", "rate_state_local_implied",
+        "rate_business_implied", "rate_consumer_implied", "rate_mortgage_30y",
+        "int_federal", "debt_federal", "int_state_local", "debt_state_local",
+        "int_business", "debt_business_corporate", "int_personal", "debt_consumer_credit",
+        "m2_less_base", "fed_total_assets", "infl_cpi_yoy"]
 show = [c for c in show if c in panel.columns]
 print("\n=== LAST 6 QUARTERS (headline series) ===")
 print(panel[show].tail(6).to_string(index=False))

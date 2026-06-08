@@ -1,0 +1,60 @@
+Table 2.1. Personal Income and Its Disposition
+Table 2.1. Personal Income and Its Disposition
+"Last Revised on: May 28, 2026 - Next Release Date June 25, 2026"
+Line,,2024,2024,2024,2024,2025,2025,2025,2025,2026
+Line,,Q1,Q2,Q3,Q4,Q1,Q2,Q3,Q4,Q1
+1,Personal income,24478.7,24800.8,25021.7,25322.4,25717.7,25987.5,26269.6,26424.9,26638.7
+2,"    Compensation of employees",14739.7,14943.7,15115.7,15309.1,15510.9,15610.3,15836.9,15949.6,16077.7
+3,"        Wages and salaries",12149.5,12317.2,12458.4,12626.6,12788.7,12860.0,13049.3,13136.6,13241.6
+4,"            Private industries",10337.6,10479.8,10598.5,10739.4,10879.0,10930.3,11106.0,11198.3,11292.4
+5,"            Government",1811.9,1837.4,1859.9,1887.2,1909.7,1929.7,1943.3,1938.3,1949.2
+6,"        Supplements to wages and salaries",2590.2,2626.5,2657.3,2682.5,2722.2,2750.3,2787.5,2813.0,2836.1
+7,"            Employer contributions for employee pension and insurance funds1",1741.1,1764.8,1785.5,1799.4,1823.8,1848.0,1872.7,1892.5,1908.6
+8,"            Employer contributions for government social insurance",849.1,861.7,871.9,883.1,898.4,902.3,914.8,920.4,927.5
+9,"    Proprietors' income with inventory valuation and capital consumption adjustments",1982.9,2013.2,2031.7,2064.5,2103.3,2105.2,2117.7,2111.3,2138.2
+10,"        Farm",51.6,52.5,56.3,71.0,84.2,78.2,81.2,59.6,72.6
+11,"        Nonfarm",1931.3,1960.8,1975.4,1993.4,2019.1,2027.0,2036.5,2051.7,2065.6
+12,"    Rental income of persons with capital consumption adjustment",1069.0,1069.7,1077.3,1096.7,1115.6,1119.2,1112.2,1111.0,1130.3
+13,"    Personal income receipts on assets",4124.5,4153.6,4144.7,4158.5,4195.9,4205.7,4220.1,4243.4,4284.4
+14,"        Personal interest income",1906.7,1928.0,1930.2,1941.7,1954.5,1960.6,1971.1,1986.9,1998.0
+15,"        Personal dividend income",2217.8,2225.6,2214.6,2216.8,2241.3,2245.0,2249.0,2256.4,2286.4
+16,"    Personal current transfer receipts",4447.6,4533.5,4587.6,4653.0,4788.0,4952.3,5013.9,5053.6,5087.8
+17,"        Government social benefits to persons",4346.5,4424.9,4492.8,4558.7,4685.0,4852.0,4901.6,4941.9,4982.1
+18,"            Social security2",1427.6,1441.0,1454.2,1469.1,1529.8,1607.5,1575.4,1578.4,1629.6
+19,"            Medicare3",1069.1,1088.2,1111.9,1140.3,1172.6,1205.3,1237.6,1269.5,1301.0
+20,"            Medicaid",909.4,934.7,947.9,960.7,955.2,991.5,1045.6,1050.5,1048.6
+21,"            Unemployment insurance",35.5,36.1,37.0,37.3,37.1,38.0,38.5,38.3,36.4
+22,"            Veterans' benefits",212.7,221.9,234.5,250.9,269.9,286.2,298.8,307.8,313.4
+23,"            Other",692.2,703.0,707.3,700.4,720.3,723.4,705.6,697.4,653.0
+24,"        Other current transfer receipts, from business (net)",101.1,108.7,94.8,94.4,103.0,100.3,112.3,111.6,105.8
+25,"    Less: Contributions for government social insurance, domestic",1884.9,1912.9,1935.4,1959.4,1995.9,2005.1,2031.3,2043.9,2079.7
+26,Less: Personal current taxes,2903.4,2957.6,3019.1,3072.9,3154.0,3200.9,3268.4,3311.7,3220.1
+27,Equals: Disposable personal income,21575.4,21843.2,22002.6,22249.5,22563.7,22786.6,23001.2,23113.2,23418.6
+28,Less: Personal outlays,20244.7,20580.6,20875.3,21197.1,21400.4,21646.3,21988.1,22242.8,22554.7
+29,"    Personal consumption expenditures",19443.8,19756.1,20032.8,20351.3,20555.0,20789.9,21111.2,21363.4,21677.7
+30,"    Personal interest payments4",528.1,549.2,563.3,563.5,568.0,567.5,585.9,589.5,588.2
+31,"    Personal current transfer payments",272.7,275.4,279.2,282.3,277.4,288.8,291.0,290.0,288.8
+32,"        To government",138.5,140.1,141.9,143.7,145.5,147.1,149.2,150.0,150.7
+33,"        To the rest of the world (net)",134.2,135.3,137.3,138.6,131.9,141.7,141.8,140.0,138.0
+34,Equals: Personal saving,1330.7,1262.6,1127.2,1052.4,1163.3,1140.3,1013.1,870.4,863.9
+35,"    Personal saving as a percentage of disposable personal income",6.2,5.8,5.1,4.7,5.2,5.0,4.4,3.8,3.7
+,Addenda:,,,,,,,,,
+36,"    Personal income excluding current transfer receipts, billions of chained (2017) dollars5",16336.7,16423.9,16489.6,16576.0,16643.8,16639.8,16699.4,16671.4,16625.5
+,"    Disposable personal income:",,,,,,,,,
+37,"        Total, billions of chained (2017) dollars5",17596.1,17701.0,17755.3,17843.2,17943.2,18025.1,18070.8,18030.2,18066.4
+,"        Per capita:",,,,,,,,,
+38,"            Current dollars",63638,64277,64616,65247,66095,66669,67220,67497,68359
+39,"            Chained (2017) dollars",51901,52088,52143,52325,52561,52738,52811,52653,52736
+40,"    Population (midperiod, thousands)6",339035,339830,340512,341005,341381,341787,342177,342433,342583
+,"    Percent change from preceding period:",,,,,,,,,
+41,"        Disposable personal income, current dollars",7.9,5.1,3.0,4.6,5.8,4.0,3.8,2.0,5.4
+42,"        Personal outlays, current dollars",5.1,6.8,5.9,6.3,3.9,4.7,6.5,4.7,5.7
+43,"        Disposable personal income, chained (2017) dollars",4.2,2.4,1.2,2.0,2.3,1.8,1.0,-0.9,0.8
+
+Legend/Footnotes
+1. Includes actual employer contributions and actuarially imputed employer contributions to reflect benefits accrued by defined benefit pension plan participants through service to employers in the current period.
+"2. Social security benefits include old-age, survivors, and disability insurance benefits that are distributed from the federal old-age and survivors insurance trust fund and the disability insurance trust fund."
+3. Medicare benefits include hospital and supplementary medical insurance benefits that are distributed from the federal hospital insurance trust fund and the supplementary medical insurance trust fund.
+4. Consists of nonmortgage interest paid by households.  Note that mortgage interest paid by households is an expense item in the calculation of rental income of persons.
+5. The current-dollar measure is deflated by the implicit price deflator for personal consumption expenditures.
+"6. Population is the total population of the United States, including the Armed Forces overseas and the institutionalized population. The monthly estimate is the average of estimates for the first of the month and the first of the following month; the annual and quarterly estimates are averages of the monthly estimates."

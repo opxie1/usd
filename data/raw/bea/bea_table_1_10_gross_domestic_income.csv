@@ -1,0 +1,33 @@
+Table 1.10. Gross Domestic Income by Type of Income
+Table 1.10. Gross Domestic Income by Type of Income
+"Last Revised on: May 28, 2026 - Next Release Date June 25, 2026"
+Line,,2024,2024,2024,2024,2025,2025,2025,2025,2026
+Line,,Q1,Q2,Q3,Q4,Q1,Q2,Q3,Q4,Q1
+1,"        Gross domestic income",28468.4,28861.1,29117.3,29560.0,29895.7,30244.9,30789.4,31199.9,31539.4
+2,"Compensation of employees, paid",14760.8,14965.6,15138.3,15331.8,15533.6,15633.3,15859.8,15971.9,16100.8
+3,"    Wages and salaries",12170.6,12339.1,12481.0,12649.3,12811.4,12883.0,13072.2,13158.9,13264.7
+4,"            To persons",12140.6,12308.5,12449.9,12617.8,12779.7,12851.1,13040.3,13127.4,13232.5
+5,"            To the rest of the world",30.0,30.5,31.1,31.5,31.7,32.0,31.9,31.5,32.2
+6,"    Supplements to wages and salaries",2590.2,2626.5,2657.3,2682.5,2722.2,2750.3,2787.5,2813.0,2836.1
+7,Taxes on production and imports,1921.7,1943.2,1965.9,1988.0,2014.4,2203.1,2289.6,2348.0,2356.6
+8,Less: Subsidies1,95.7,93.7,92.8,94.7,107.7,120.0,124.2,96.6,134.6
+9,Net operating surplus,7186.9,7283.9,7271.8,7439.2,7512.2,7533.6,7652.1,7766.6,7940.6
+10,"    Private enterprises",7234.8,7331.5,7317.9,7487.4,7560.5,7586.0,7705.0,7823.2,8000.3
+11,"        Net interest and miscellaneous payments, domestic industries",636.9,623.0,578.9,605.6,628.5,629.2,598.3,589.9,626.1
+12,"        Business current transfer payments (net)",302.2,282.2,287.4,273.9,276.1,274.2,293.4,286.0,279.0
+13,"        Proprietors' income with inventory valuation and capital consumption adjustments",1982.9,2013.2,2031.7,2064.5,2103.3,2105.2,2117.7,2111.3,2138.2
+14,"        Rental income of persons with capital consumption adjustment",1069.0,1069.7,1077.3,1096.7,1115.6,1119.2,1112.2,1111.0,1130.3
+15,"        Corporate profits with inventory valuation and capital consumption adjustments, domestic industries",3243.8,3343.4,3342.6,3446.9,3437.0,3458.2,3583.3,3725.0,3826.8
+16,"            Taxes on corporate income",661.6,682.5,677.2,700.0,670.4,670.3,693.6,746.4,802.5
+17,"            Profits after tax with inventory valuation and capital consumption adjustments",2582.2,2660.9,2665.4,2746.8,2766.6,2787.9,2889.7,2978.5,3024.3
+18,"                Net dividends",1937.5,1776.4,1890.5,1915.6,1833.1,1578.5,1657.2,1758.6,1907.8
+19,"                Undistributed corporate profits with inventory valuation and capital consumption adjustments",644.6,884.4,774.9,831.3,933.5,1209.4,1232.6,1220.0,1116.4
+20,"    Current surplus of government enterprises1",-47.9,-47.6,-46.2,-48.2,-48.3,-52.4,-52.8,-56.6,-59.8
+21,Consumption of fixed capital,4694.7,4762.1,4834.1,4895.8,4943.2,4994.8,5112.1,5210.1,5276.0
+22,"    Private",3906.0,3964.2,4025.2,4076.1,4112.4,4154.2,4256.8,4339.7,4394.1
+23,"    Government",788.7,797.9,808.9,819.7,830.8,840.6,855.3,870.4,881.9
+,Addendum:,,,,,,,,,
+24,"    Statistical discrepancy",239.7,285.9,394.4,265.2,146.5,240.9,308.6,222.6,280.1
+
+Legend/Footnotes
+"1. Prior to 1959, subsidies (line 8) and the current surplus of government enterprises (line 20) are not shown separately; subsidies are presented net of the current surplus of government enterprises."
