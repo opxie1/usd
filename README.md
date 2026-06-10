@@ -37,13 +37,15 @@ tables/     (econometric output, to come)
 
 ### Known data issues (see catalog for detail)
 
-1. The state/local implied rate runs high (~7-8%) because NIPA state/local interest includes public-pension actuarial interest (BEA Table 3.3 note 1); the federal implied rate carries the same pension component but is dominated by its large debt base. The business implied rate uses net (not gross) interest. See the catalog's open-data-issues section — these need a decision from Prof. Gmeiner.
+1. The raw state/local implied rate runs high (~7-8%) because NIPA state/local interest includes public-pension actuarial interest (BEA Table 3.3 note 1). Resolved per Prof. Gmeiner: `rate_state_local_implied_expension` nets out the table 7.24 pension-interest imputation (Y315RC1A027NBEA, annual, carried forward within year) and lands at 3-4%, validated against the Bond Buyer muni index over 1990-2016 (mean absolute gap 0.8pp). The federal implied rate carries the same pension component but is dominated by its large debt base. The business implied rate uses net (not gross) interest.
 2. Fed balance-sheet series begin 2002Q4, which caps any specification that uses them.
 3. Z.1 debt levels lag about one quarter (latest 2025Q4), so federal/state-local/business implied rates end 2025Q4; the consumer implied rate reaches 2026Q1.
 
 ## Econometrics (first pass)
 
 `scripts/task1_money_inflation_var.py` runs Task 1 (money supply -> inflation, controlling for real output): ADF/KPSS unit-root tests, trivariate VARs of (real GDP growth, growth of M2-less-base, inflation) for each of the four inflation measures, AIC lag selection capped at 8 lags, stability checks, Granger causality both directions, orthogonalized IRFs (Cholesky ordering: output, money, inflation), an h=12 FEVD share, and a rolling 60-quarter Granger causality test to trace how the money-inflation link changes before, during, and after COVID. Outputs land in `tables/task1_*.csv` and `figures/task1_*.png`. Full-sample and pre-COVID subsamples plus a short post-2020 subsample (25 observations; interpret with caution).
+
+`scripts/task23_rate_system_var.py` runs Tasks 2 and 3 (which rates respond to the money supply; which rates drive others). Six-variable VAR in levels of the five sector rates (federal, state/local ex-pension, mortgage, business, consumer) plus M2-less-base growth, 1971Q2-2024Q4 (the corrected state/local rate currently ends 2024Q4 because the pension series is annual). AIC lag selection capped at 8, stability confirmed, full pairwise Granger matrix plus joint tests of the federal-rate hierarchy, IRFs to federal-rate and money shocks, and a Johansen trace test across the five rates. Outputs in `tables/task23_*.csv`, `figures/task23_*.png`. Interpretation caveats: four of the five rates are backward-looking weighted averages (interest paid over debt), so the lone market rate (mortgage) naturally leads them; the state/local rate inherits annual steps from the pension correction.
 
 `scripts/task4_fed_transactions.py` runs Task 4 (role of Fed transactions in the money supply and interest rates), sample 2003Q1-2026Q1 because Fed securities holdings (WSHOSHO) begin 2002Q4. Six-variable VAR in growth rates and differences (Fed securities growth, monetary base growth, M2-less-base growth, change in fed funds, change in 10y Treasury, CPI inflation), AIC lags capped at 4 given the parameter count, Granger tests for the Fed-transactions channel, IRFs to a Fed securities shock, FEVD shares, then a Johansen trace test on the six log-level/rate series and a first-pass VECM (rank chosen by the trace test at 5 percent) whose loading and cointegration vectors are saved. Outputs in `tables/task4_*.csv` and `figures/task4_*.png`.
 
@@ -57,7 +59,9 @@ python scripts/fetch_fred.py              # pull data, build panels + catalog CS
 python scripts/make_catalog_md.py         # render catalog markdown
 python scripts/make_plots.py              # render the six figures
 python scripts/check_panel.py             # coverage + recent-values QA
+python scripts/discover_pension_interest.py  # locate/validate the pension-interest correction series
 python scripts/task1_money_inflation_var.py  # Task 1 VAR analysis
+python scripts/task23_rate_system_var.py     # Tasks 2-3 rate system VAR
 python scripts/task4_fed_transactions.py     # Task 4 Fed transactions VAR/VECM
 ```
 

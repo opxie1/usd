@@ -109,6 +109,8 @@ def fig_rate_compare(df):
             ax.plot(df.index, df[imp], label="Implied (NIPA / debt)", linewidth=1.3)
         if mkt in df:
             ax.plot(df.index, df[mkt], label=mktlab, linewidth=1.3, alpha=0.8)
+        if title == "State and local" and "rate_state_local_implied_expension" in df:
+            ax.plot(df.index, df["rate_state_local_implied_expension"], label="Implied ex pension interest", linewidth=1.3, color="green")
         ax.set_title(title)
         ax.set_ylabel("Percent")
         ax.legend(fontsize=8)

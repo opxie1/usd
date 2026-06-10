@@ -1,0 +1,7 @@
+caused,money_g,rate_federal,rate_state_local,rate_mortgage,rate_business,rate_consumer
+money_g,,0.5664,0.4515,0.0065,0.0248,0.2266
+rate_federal,0.7936,,0.1749,0.0006,0.1683,0.0046
+rate_state_local,0.5876,0.5449,,0.6281,0.2937,0.3627
+rate_mortgage,0.5923,0.0038,0.9358,,0.6654,0.0465
+rate_business,0.066,0.0449,0.9434,0.6303,,0.7174
+rate_consumer,0.8607,0.5143,0.9118,0.001,0.2741,

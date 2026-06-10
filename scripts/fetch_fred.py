@@ -94,6 +94,7 @@ SERIES = [
     dict(name="int_state_local", fred_id="B111RC1Q027SBEA", group="nipa_interest", agg="avg", role="flow", status="primary"),
     dict(name="int_business", fred_id="W272RC1Q027SBEA", group="nipa_interest", agg="avg", role="flow", status="primary"),
     dict(name="int_personal", fred_id="B069RC1Q027SBEA", group="nipa_interest", agg="avg", role="flow", status="primary"),
+    dict(name="int_state_local_pension", fred_id="Y315RC1A027NBEA", group="nipa_interest", agg="ffill", role="flow", status="primary"),
 ]
 
 
@@ -136,8 +137,13 @@ def get_observations(fred_id):
 
 def to_quarterly(s, agg):
     r = s.resample("QE")
-    out = r.mean() if agg == "avg" else r.last()
-    return out
+    if agg == "avg":
+        return r.mean()
+    if agg == "ffill":
+        out = r.ffill()
+        idx = pd.date_range(out.index.min(), pd.Timestamp(s.index.max().year, 12, 31), freq="QE")
+        return out.reindex(idx).ffill()
+    return r.last()
 
 
 def add_derived(df):
@@ -159,6 +165,8 @@ def add_derived(df):
             df[out] = df[num] / (df[den].astype(float) / 1000.0) * 100.0
     if "int_business" in df and "debt_business" in df:
         df["rate_business_implied_nonfin"] = df["int_business"] / (df["debt_business"].astype(float) / 1000.0) * 100.0
+    if all(c in df for c in ["int_state_local", "int_state_local_pension", "debt_state_local"]):
+        df["rate_state_local_implied_expension"] = (df["int_state_local"] - df["int_state_local_pension"]) / (df["debt_state_local"].astype(float) / 1000.0) * 100.0
     return df
 
 

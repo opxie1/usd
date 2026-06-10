@@ -1,0 +1,6 @@
+system,deterministic,k_ar_diff,null_rank_at_most,trace_stat,cv_95,reject_at_5pct
+five_rates,constant,4,0,60.34,69.82,False
+five_rates,constant,4,1,31.56,47.85,False
+five_rates,constant,4,2,15.95,29.8,False
+five_rates,constant,4,3,4.97,15.49,False
+five_rates,constant,4,4,1.71,3.84,False
