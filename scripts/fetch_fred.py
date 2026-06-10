@@ -95,6 +95,14 @@ SERIES = [
     dict(name="int_business", fred_id="W272RC1Q027SBEA", group="nipa_interest", agg="avg", role="flow", status="primary"),
     dict(name="int_personal", fred_id="B069RC1Q027SBEA", group="nipa_interest", agg="avg", role="flow", status="primary"),
     dict(name="int_state_local_pension", fred_id="Y315RC1A027NBEA", group="nipa_interest", agg="ffill", role="flow", status="primary"),
+
+    dict(name="pce_nominal", fred_id="PCEC", group="gdp_components", agg="last", role="level", status="primary"),
+    dict(name="investment_nominal", fred_id="GPDI", group="gdp_components", agg="last", role="level", status="primary"),
+    dict(name="government_nominal", fred_id="GCE", group="gdp_components", agg="last", role="level", status="primary"),
+    dict(name="netexports_nominal", fred_id="NETEXP", group="gdp_components", agg="last", role="level", status="primary"),
+    dict(name="pce_durables", fred_id="PCDG", group="gdp_components", agg="last", role="level", status="alternate"),
+    dict(name="pce_nondurables", fred_id="PCND", group="gdp_components", agg="last", role="level", status="alternate"),
+    dict(name="pce_services", fred_id="PCESV", group="gdp_components", agg="last", role="level", status="alternate"),
 ]
 
 

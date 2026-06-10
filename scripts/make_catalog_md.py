@@ -21,6 +21,7 @@ GROUP_TITLES = {
     "fed_balance_sheet": "Federal Reserve Balance Sheet",
     "bank_credit": "Bank Credit (Thesis Variables)",
     "nipa_interest": "NIPA Interest Payments (for implied rates)",
+    "gdp_components": "GDP Components, Nominal (Task 5)",
 }
 GROUP_ORDER = list(GROUP_TITLES.keys())
 

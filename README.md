@@ -47,6 +47,8 @@ tables/     (econometric output, to come)
 
 `scripts/task23_rate_system_var.py` runs Tasks 2 and 3 (which rates respond to the money supply; which rates drive others). Six-variable VAR in levels of the five sector rates (federal, state/local ex-pension, mortgage, business, consumer) plus M2-less-base growth, 1971Q2-2024Q4 (the corrected state/local rate currently ends 2024Q4 because the pension series is annual). AIC lag selection capped at 8, stability confirmed, full pairwise Granger matrix plus joint tests of the federal-rate hierarchy, IRFs to federal-rate and money shocks, and a Johansen trace test across the five rates. Outputs in `tables/task23_*.csv`, `figures/task23_*.png`. Interpretation caveats: four of the five rates are backward-looking weighted averages (interest paid over debt), so the lone market rate (mortgage) naturally leads them; the state/local rate inherits annual steps from the pension correction.
 
+`scripts/task5_loanable_funds_tvc.py` runs the empirical half of Task 5 (source of higher demand for loanable funds). It produces nominal GDP component shares (consumption, investment, government, net exports), a period-average table comparing 2010-2019, 2020-2021, and 2022-onward (growth of real GDP, real consumption, M2-less-base, sector-by-sector debt, and the CPI), and a time-varying coefficient regression of private borrowing growth (household mortgages + nonfinancial business + consumer credit) on one-quarter-lagged regressors (change in the 30y mortgage rate, real consumption growth, federal debt growth). Coefficients follow random walks estimated by maximum likelihood with the Kalman smoother; a rolling 40-quarter OLS provides a check. Regressors are lagged to limit same-quarter simultaneity; the remaining literature-review half of Task 5 is pending. Outputs in `tables/task5_*.csv` and `figures/task5_*.png`.
+
 `scripts/task4_fed_transactions.py` runs Task 4 (role of Fed transactions in the money supply and interest rates), sample 2003Q1-2026Q1 because Fed securities holdings (WSHOSHO) begin 2002Q4. Six-variable VAR in growth rates and differences (Fed securities growth, monetary base growth, M2-less-base growth, change in fed funds, change in 10y Treasury, CPI inflation), AIC lags capped at 4 given the parameter count, Granger tests for the Fed-transactions channel, IRFs to a Fed securities shock, FEVD shares, then a Johansen trace test on the six log-level/rate series and a first-pass VECM (rank chosen by the trace test at 5 percent) whose loading and cointegration vectors are saved. Outputs in `tables/task4_*.csv` and `figures/task4_*.png`.
 
 ## Reproduce
@@ -63,6 +65,7 @@ python scripts/discover_pension_interest.py  # locate/validate the pension-inter
 python scripts/task1_money_inflation_var.py  # Task 1 VAR analysis
 python scripts/task23_rate_system_var.py     # Tasks 2-3 rate system VAR
 python scripts/task4_fed_transactions.py     # Task 4 Fed transactions VAR/VECM
+python scripts/task5_loanable_funds_tvc.py   # Task 5 loanable-funds demand TVC
 ```
 
 The FRED API key is read from the `FRED_API_KEY` environment variable or from `config/fred_api_key.txt` (gitignored); it is not committed to the repository.

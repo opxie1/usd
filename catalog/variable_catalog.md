@@ -167,3 +167,15 @@ Metadata below (title, units, frequency, coverage) is captured live from the API
 | primary | `int_personal` | `B069RC1Q027SBEA` | Personal interest payments | Billions of Dollars | Quarterly | SAAR | 1947-01-01 .. 2026-01-01 | avg |
 | primary | `int_state_local` | `B111RC1Q027SBEA` | State and local government current receipts: Interest payments | Billions of Dollars | Quarterly | SAAR | 1947-01-01 .. 2026-01-01 | avg |
 | primary | `int_state_local_pension` | `Y315RC1A027NBEA` | State and Local Government Defined Benefit Pension Plans: Current receipts, accrual basis: Income receipts on assets: Interest: Imputed interest on plans' claims on employers | Billions of Dollars | Annual | NSA | 1929-01-01 .. 2024-01-01 | ffill |
+
+## GDP Components, Nominal (Task 5)
+
+| status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
+|---|---|---|---|---|---|---|---|---|
+| primary | `government_nominal` | `GCE` | Government Consumption Expenditures and Gross Investment | Billions of Dollars | Quarterly | SAAR | 1947-01-01 .. 2026-01-01 | last |
+| primary | `investment_nominal` | `GPDI` | Gross Private Domestic Investment | Billions of Dollars | Quarterly | SAAR | 1947-01-01 .. 2026-01-01 | last |
+| primary | `netexports_nominal` | `NETEXP` | Net Exports of Goods and Services | Billions of Dollars | Quarterly | SAAR | 1947-01-01 .. 2026-01-01 | last |
+| primary | `pce_nominal` | `PCEC` | Personal Consumption Expenditures | Billions of Dollars | Quarterly | SAAR | 1947-01-01 .. 2026-01-01 | last |
+| alternate | `pce_durables` | `PCDG` | Personal Consumption Expenditures: Durable Goods | Billions of Dollars | Quarterly | SAAR | 1947-01-01 .. 2026-01-01 | last |
+| alternate | `pce_nondurables` | `PCND` | Personal Consumption Expenditures: Nondurable Goods | Billions of Dollars | Quarterly | SAAR | 1947-01-01 .. 2026-01-01 | last |
+| alternate | `pce_services` | `PCESV` | Personal Consumption Expenditures: Services | Billions of Dollars | Quarterly | SAAR | 1947-01-01 .. 2026-01-01 | last |
