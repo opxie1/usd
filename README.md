@@ -41,9 +41,13 @@ tables/     (econometric output, to come)
 2. Fed balance-sheet series begin 2002Q4, which caps any specification that uses them.
 3. Z.1 debt levels lag about one quarter (latest 2025Q4), so federal/state-local/business implied rates end 2025Q4; the consumer implied rate reaches 2026Q1.
 
+## Econometrics (first pass)
+
+`scripts/task1_money_inflation_var.py` runs Task 1 (money supply -> inflation, controlling for real output): ADF/KPSS unit-root tests, trivariate VARs of (real GDP growth, growth of M2-less-base, inflation) for each of the four inflation measures, AIC lag selection capped at 8 lags, stability checks, Granger causality both directions, orthogonalized IRFs (Cholesky ordering: output, money, inflation), an h=12 FEVD share, and a rolling 60-quarter Granger causality test to trace how the money-inflation link changes before, during, and after COVID. Outputs land in `tables/task1_*.csv` and `figures/task1_*.png`. Full-sample and pre-COVID subsamples plus a short post-2020 subsample (25 observations; interpret with caution).
+
 ## Reproduce
 
-Requires Python 3 with `pandas`, `numpy`, `matplotlib`.
+Requires Python 3 with `pandas`, `numpy`, `matplotlib`, `statsmodels`.
 
 ```
 python scripts/discover_nipa_interest.py  # validate NIPA interest series against BEA downloads
@@ -51,6 +55,7 @@ python scripts/fetch_fred.py              # pull data, build panels + catalog CS
 python scripts/make_catalog_md.py         # render catalog markdown
 python scripts/make_plots.py              # render the six figures
 python scripts/check_panel.py             # coverage + recent-values QA
+python scripts/task1_money_inflation_var.py  # Task 1 VAR analysis
 ```
 
 The FRED API key is read from the `FRED_API_KEY` environment variable or from `config/fred_api_key.txt` (gitignored); it is not committed to the repository.
