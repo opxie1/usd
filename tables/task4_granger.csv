@@ -1,0 +1,15 @@
+sample,n_obs,lag_aic,stable,caused,causing,granger_p
+full_2003_2026,94,2,True,money_g,fed_g,0.4576
+full_2003_2026,94,2,True,base_g,fed_g,0.0371
+full_2003_2026,94,2,True,d_ffr,fed_g,0.3836
+full_2003_2026,94,2,True,d_gs10,fed_g,0.2941
+full_2003_2026,94,2,True,infl_cpi,fed_g,0.3085
+full_2003_2026,94,2,True,fed_g,d_ffr,0.0878
+full_2003_2026,94,2,True,infl_cpi,money_g,0.0136
+pre_covid_2003_2019,68,2,True,money_g,fed_g,0.0323
+pre_covid_2003_2019,68,2,True,base_g,fed_g,0.0005
+pre_covid_2003_2019,68,2,True,d_ffr,fed_g,0.0
+pre_covid_2003_2019,68,2,True,d_gs10,fed_g,0.9795
+pre_covid_2003_2019,68,2,True,infl_cpi,fed_g,0.1874
+pre_covid_2003_2019,68,2,True,fed_g,d_ffr,0.0882
+pre_covid_2003_2019,68,2,True,infl_cpi,money_g,0.0199
