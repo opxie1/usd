@@ -1,0 +1,4 @@
+sample,n_obs,lag_aic,stable,joint_federal_to_others_p,joint_others_to_federal_p
+market4_full_1972_2026,217,4,True,0.0,0.754
+market4_pre_covid_1972_2019,192,2,True,0.0,0.3216
+market5_with_muni_1972_2016,179,2,True,0.0,0.0006
