@@ -66,8 +66,8 @@ def unit_root_table(df):
     return pd.DataFrame(rows)
 
 
-def fevd_share(irf, names, response, impulse):
-    psi = irf.orth_irfs
+def fevd_share(irf, names, response, impulse, horizon=12):
+    psi = irf.orth_irfs[:horizon]
     i = names.index(response)
     j = names.index(impulse)
     num = float((psi[:, i, j] ** 2).sum())

@@ -45,7 +45,7 @@ def fig_inflation(df):
     for col, lab in series:
         if col in df:
             ax.plot(df.index, df[col], label=lab, linewidth=1.3)
-    ax.axhline(2.0, color="gray", linestyle="--", linewidth=1.0, label="2% target")
+    ax.axhline(2.0, color="gray", linestyle="--", linewidth=1.0, label="2 percent reference")
     ax.set_title("Inflation Rates (year-over-year)")
     ax.set_ylabel("Percent")
     ax.set_xlabel("Quarter")
@@ -59,8 +59,8 @@ def fig_debt(df):
     cats = [
         ("debt_federal", "Federal"),
         ("debt_state_local", "State and local"),
-        ("debt_mortgage_total", "Mortgage (total)"),
-        ("debt_business", "Business (nonfinancial)"),
+        ("debt_mortgage_household", "Mortgage (household)"),
+        ("debt_business_corporate", "Business (corporate)"),
         ("debt_consumer_credit", "Consumer credit"),
     ]
     present = [(c, l) for c, l in cats if c in df]

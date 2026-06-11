@@ -21,6 +21,7 @@ for c in panel.columns:
         print(f"{c:32s} EMPTY")
 
 show = ["quarter", "rate_federal_implied", "rate_state_local_implied",
+        "rate_state_local_implied_expension",
         "rate_business_implied", "rate_consumer_implied", "rate_mortgage_30y",
         "int_federal", "debt_federal", "int_state_local", "debt_state_local",
         "int_business", "debt_business_corporate", "int_personal", "debt_consumer_credit",

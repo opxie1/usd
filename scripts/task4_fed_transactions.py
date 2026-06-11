@@ -54,8 +54,8 @@ def load():
     return out.dropna(), lv.dropna()
 
 
-def fevd_share(irf, names, response, impulse):
-    psi = irf.orth_irfs
+def fevd_share(irf, names, response, impulse, horizon=12):
+    psi = irf.orth_irfs[:horizon]
     i = names.index(response)
     j = names.index(impulse)
     return float((psi[:, i, j] ** 2).sum() / (psi[:, i, :] ** 2).sum())
@@ -126,7 +126,7 @@ def main():
     jo_df = pd.DataFrame(jo_rows)
     jo_df.to_csv(os.path.join(TAB, "task4_johansen.csv"), index=False)
 
-    rank = select_coint_rank(lv.values, 1, k, method="trace", signif=0.05).rank
+    rank = select_coint_rank(lv.values, 0, k, method="trace", signif=0.05).rank
     if rank > 0:
         vecm = VECM(lv, k_ar_diff=k, coint_rank=rank, deterministic="co").fit()
         alpha = pd.DataFrame(vecm.alpha, index=lv.columns,
@@ -148,7 +148,7 @@ def main():
     print("=== JOHANSEN trace test (levels system, k_ar_diff =", k, ") ===")
     print(jo_df.to_string(index=False))
     print()
-    print("selected cointegration rank (trend spec, 5 percent):", int(rank))
+    print("selected cointegration rank (constant spec, 5 percent):", int(rank))
     print(ORDERING_NOTE)
 
 
