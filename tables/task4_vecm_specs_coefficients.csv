@@ -1,0 +1,7 @@
+variable,constant_only_alpha_ec1,constant_only_alpha_ec2,constant_plus_trend_alpha_ec1,constant_plus_trend_alpha_ec2,constant_plus_trend_alpha_ec3,constant_plus_trend_alpha_ec4,constant_only_beta_ec1,constant_only_beta_ec2,constant_plus_trend_beta_ec1,constant_plus_trend_beta_ec2,constant_plus_trend_beta_ec3,constant_plus_trend_beta_ec4
+log_fed_sec,-0.1433,-0.0079,-0.2156,0.1344,0.0104,-0.0014,1.0,0.0,1.0,-0.0,-0.0,-0.0
+log_base,-0.158,-0.0152,-0.0713,-0.3585,-0.6531,-0.0176,0.0,1.0,-0.0,1.0,0.0,0.0
+log_m2_less_base,0.0338,-0.0036,0.0167,0.022,0.0021,0.0047,0.4557,-0.9476,0.0,-0.0,1.0,0.0
+ffr,-0.0088,0.1734,0.1651,0.5204,2.0049,-0.0684,0.0646,-0.1809,-0.0,-0.0,0.0,1.0
+gs10,-0.0578,-0.2264,0.0811,0.3359,2.7083,0.0212,0.2699,0.6702,0.3888,0.3508,-0.0848,-1.4495
+log_cpi,0.0086,-0.0037,0.0107,0.0101,0.0617,0.001,-5.7439,-1.0486,-4.7781,-4.0112,1.2663,-14.8499

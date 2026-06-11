@@ -51,6 +51,12 @@ tables/     (econometric output, to come)
 
 `scripts/task23_robustness_market_rates.py` reruns the Tasks 2-3 system with market rates (10y Treasury, 30y mortgage, Baa corporate, 24m personal loan, and the Bond Buyer muni index in its pre-2016 window) in place of the implied weighted averages. The market-rate system delivers a clean one-way hierarchy: the federal rate jointly Granger-causes the other rates (p near 0 in full and pre-COVID samples) while the other rates jointly do not cause the federal rate (p = 0.75 full sample), and the mortgage rate's apparent dominance in the implied-rate system disappears, confirming it was an artifact of backward-looking weighted averages lagging a market rate. Money growth does not directly move market rates; the federal and business rates lead money growth instead. Outputs in `tables/task23_market_*.csv` and `figures/task23_market_granger_heatmap.png`.
 
+`scripts/task23_toda_yamamoto.py` repeats the market-rate causality tests with the Toda-Yamamoto lag-augmented procedure (levels VAR with one extra lag, Wald tests on the first p lags only), which stays valid when the rates carry unit roots. Results match the standard tests: the federal rate causes the other rates, the other rates jointly do not cause the federal rate (p = 0.71), and the federal and business rates lead money growth. Outputs in `tables/task23_toda_yamamoto_*.csv`.
+
+`scripts/validate_shapiro_demand.py` checks our money-driven story against Shapiro's supply/demand decomposition of PCE inflation (data in `data/raw/shapiro/`, from the San Francisco Fed). Money growth (M2-less-base, year over year) leads both components at long lags, with the demand-side correlation peaking around three years; bivariate Granger tests are stronger for the supply component than the demand component. The decomposition does not isolate monetary episodes as demand-driven, so the paper should cite it as an alternative lens rather than a validation, and we document that here. Outputs in `tables/shapiro_validation_*.csv` and `figures/shapiro_validation.png`.
+
+`scripts/task4_vecm_spec_compare.py` estimates the Task 4 VECM under both deterministic specifications (constant only, rank 2 from the trace test; constant plus trend, rank 4) and saves log-likelihoods, loadings, and cointegrating vectors side by side in `tables/task4_vecm_specs_*.csv` so the specification choice can be made on economic grounds.
+
 `scripts/task4_fed_transactions.py` runs Task 4 (role of Fed transactions in the money supply and interest rates), sample 2003Q1-2026Q1 because Fed securities holdings (WSHOSHO) begin 2002Q4. Six-variable VAR in growth rates and differences (Fed securities growth, monetary base growth, M2-less-base growth, change in fed funds, change in 10y Treasury, CPI inflation), AIC lags capped at 4 given the parameter count, Granger tests for the Fed-transactions channel, IRFs to a Fed securities shock, FEVD shares, then a Johansen trace test on the six log-level/rate series and a first-pass VECM (rank chosen by the trace test at 5 percent) whose loading and cointegration vectors are saved. Outputs in `tables/task4_*.csv` and `figures/task4_*.png`.
 
 ## Reproduce
@@ -67,6 +73,9 @@ python scripts/discover_pension_interest.py  # locate/validate the pension-inter
 python scripts/task1_money_inflation_var.py  # Task 1 VAR analysis
 python scripts/task23_rate_system_var.py     # Tasks 2-3 rate system VAR
 python scripts/task23_robustness_market_rates.py  # Tasks 2-3 market-rate robustness
+python scripts/task23_toda_yamamoto.py       # Tasks 2-3 Toda-Yamamoto robustness
+python scripts/validate_shapiro_demand.py    # money growth vs Shapiro components
+python scripts/task4_vecm_spec_compare.py    # Task 4 VECM deterministic specs
 python scripts/task4_fed_transactions.py     # Task 4 Fed transactions VAR/VECM
 python scripts/task5_loanable_funds_tvc.py   # Task 5 loanable-funds demand TVC
 ```

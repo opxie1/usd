@@ -1,0 +1,3 @@
+spec,deterministic,k_ar_diff,rank,n_obs,llf,note
+constant_only,co,1,2,95,947.4,
+constant_plus_trend,colo,1,4,95,975.6,
