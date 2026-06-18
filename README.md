@@ -57,6 +57,8 @@ tables/     (econometric output, to come)
 
 `scripts/task4_vecm_spec_compare.py` estimates the Task 4 VECM under both deterministic specifications (constant only, rank 2 from the trace test; constant plus trend, rank 4) and saves log-likelihoods, loadings, and cointegrating vectors side by side in `tables/task4_vecm_specs_*.csv` so the specification choice can be made on economic grounds.
 
+`scripts/task5b_sector_credit_demand.py` runs the per-sector extension of Task 5 requested in review. For each private-debt type (household mortgages, consumer credit, nonfinancial corporate) it regresses that debt's growth on its own market interest rate (lagged one quarter) and lagged money growth, estimating the money coefficient two ways (Kalman-smoothed random walk and rolling 40-quarter OLS, both with 95 percent bands) and under two money measures (M2-less-base and base money). Market rates are used as each sector's own rate so the regressor is not mechanically tied to the dependent debt series. Outputs in `tables/task5b_*.csv` and `figures/task5b_*.png`. First-pass reading: consumer borrowing carries a positive (marginal) coefficient on M2-less-base growth while corporate borrowing does not and turns negative after 2020, consistent with a credit-demand mechanism weaker where borrowing funds value creation; base money is mostly insignificant across sectors, with only mortgage borrowing showing intermittent base-money sensitivity in recent windows, so the lingering-reserves channel gets weak and mixed support. Several Kalman specifications drove the coefficient's state variance to zero, meaning the data did not support time variation and the smoothed coefficient is effectively constant; the rolling OLS is the more informative view in those cases.
+
 `scripts/task4_fed_transactions.py` runs Task 4 (role of Fed transactions in the money supply and interest rates), sample 2003Q1-2026Q1 because Fed securities holdings (WSHOSHO) begin 2002Q4. Six-variable VAR in growth rates and differences (Fed securities growth, monetary base growth, M2-less-base growth, change in fed funds, change in 10y Treasury, CPI inflation), AIC lags capped at 4 given the parameter count, Granger tests for the Fed-transactions channel, IRFs to a Fed securities shock, FEVD shares, then a Johansen trace test on the six log-level/rate series and a first-pass VECM (rank chosen by the trace test at 5 percent) whose loading and cointegration vectors are saved. Outputs in `tables/task4_*.csv` and `figures/task4_*.png`.
 
 ## Reproduce
@@ -78,6 +80,7 @@ python scripts/validate_shapiro_demand.py    # money growth vs Shapiro component
 python scripts/task4_vecm_spec_compare.py    # Task 4 VECM deterministic specs
 python scripts/task4_fed_transactions.py     # Task 4 Fed transactions VAR/VECM
 python scripts/task5_loanable_funds_tvc.py   # Task 5 loanable-funds demand TVC
+python scripts/task5b_sector_credit_demand.py  # Task 5 per-sector credit-demand TVC
 ```
 
 The FRED API key is read from the `FRED_API_KEY` environment variable or from `config/fred_api_key.txt` (gitignored); it is not committed to the repository.
