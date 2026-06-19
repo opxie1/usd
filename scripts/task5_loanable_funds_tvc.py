@@ -156,14 +156,18 @@ def run_rolling(d, window=40):
     X = sm.add_constant(data[REGRESSORS])
     res = RollingOLS(y, X, window=window).fit()
     params = res.params
+    bse = res.bse
     fig, axes = plt.subplots(2, 2, figsize=(12, 8))
     for ax, name in zip(axes.ravel(), X.columns):
-        ax.plot(params.index, params[name], linewidth=1.5)
+        p = params[name]
+        s = bse[name]
+        ax.plot(p.index, p.values, linewidth=1.5)
+        ax.fill_between(p.index, p - 1.96 * s, p + 1.96 * s, alpha=0.2)
         ax.axhline(0, color="black", linewidth=0.8)
         ax.axvline(pd.Timestamp("2020-03-31"), color="gray", linestyle=":", linewidth=1.0)
         ax.set_title(f"Rolling {window}q OLS coefficient: {name}")
         ax.grid(True, alpha=0.3)
-    fig.suptitle("Rolling OLS check, private borrowing growth equation")
+    fig.suptitle(f"Rolling {window}q OLS coefficients with 95% bands, private borrowing growth equation")
     fig.tight_layout()
     fig.savefig(os.path.join(FIG, "task5_rolling_betas.png"), dpi=150)
     plt.close(fig)
