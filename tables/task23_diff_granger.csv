@@ -1,4 +1,3 @@
-test,p_value
-federal jointly Granger-causes other rates (differences),0.0357
-other rates jointly Granger-cause federal (differences),0.0
-money growth Granger-causes business rate (differences),0.0211
+system,n_obs,lag,federal_to_others_p,others_to_federal_p,money_to_business_p
+implied,214,4,0.0357,0.0,0.0211
+market,216,3,0.0,0.6007,0.1236

@@ -1,3 +1,5 @@
-system,lag_aic,stable,whiteness_p,whiteness_stat
-levels (rates + money),5,True,0.0004,292.03
-differences (d rates + money),4,True,0.0031,277.14
+system,form,lag_aic,stable,min_root_modulus,whiteness_p_nlags12,whiteness_stat
+implied,levels,5,True,1.0159,0.0013,324.75
+implied,differences,4,True,1.1472,0.0044,354.76
+market,levels,4,True,1.0346,0.0251,241.02
+market,differences,3,True,1.4035,0.0128,274.98

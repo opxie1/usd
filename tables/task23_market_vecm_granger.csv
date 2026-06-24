@@ -1,0 +1,2 @@
+model,federal_to_others_p,others_to_federal_p,federal_alpha_abs_max
+"market VECM (rank 3, k_ar_diff 1, unrestricted const)",0.0,0.158,0.1321
