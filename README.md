@@ -53,6 +53,8 @@ tables/     (econometric output, to come)
 
 `scripts/task23_toda_yamamoto.py` repeats the market-rate causality tests with the Toda-Yamamoto lag-augmented procedure (levels VAR with one extra lag, Wald tests on the first p lags only), which stays valid when the rates carry unit roots. Results match the standard tests: the federal rate causes the other rates, the other rates jointly do not cause the federal rate (p = 0.71), and the federal and business rates lead money growth. Outputs in `tables/task23_toda_yamamoto_*.csv`.
 
+`scripts/task23_diff_and_johansen.py` implements the first review fix from Prof. Gmeiner: it runs Johansen trace tests on the five implied rates in both levels and differences (statsmodels `coint_johansen` supports no-constant/constant/trend; the restricted-vs-unrestricted constant and trend cases in Johansen's five-case taxonomy are not available in its trace test and would need verified critical-value tables or an EViews cross-check), re-estimates the rate system in differences, and reports a residual-autocorrelation (whiteness) test for both forms. Result: the rates are not cointegrated in levels (so differences are the right form), the federal-rate hierarchy survives differencing (federal jointly causes the other rates, p about 0.04, with feedback present in the implied-rate system), and residual autocorrelation remains in both the levels and differenced systems (p about 0.001-0.003), consistent with a lag-hungry six-variable macro VAR. Outputs in `tables/task23_johansen_*.csv`, `task23_diff_*.csv`.
+
 `scripts/validate_shapiro_demand.py` checks our money-driven story against Shapiro's supply/demand decomposition of PCE inflation (data in `data/raw/shapiro/`, from the San Francisco Fed). Money growth (M2-less-base, year over year) leads both components at long lags, with the demand-side correlation peaking around three years; bivariate Granger tests are stronger for the supply component than the demand component. The decomposition does not isolate monetary episodes as demand-driven, so the paper should cite it as an alternative lens rather than a validation, and we document that here. Outputs in `tables/shapiro_validation_*.csv` and `figures/shapiro_validation.png`.
 
 `scripts/task4_vecm_spec_compare.py` estimates the Task 4 VECM under both deterministic specifications (constant only, rank 2 from the trace test; constant plus trend, rank 4) and saves log-likelihoods, loadings, and cointegrating vectors side by side in `tables/task4_vecm_specs_*.csv` so the specification choice can be made on economic grounds.
@@ -77,6 +79,7 @@ python scripts/discover_pension_interest.py  # locate/validate the pension-inter
 python scripts/task1_money_inflation_var.py  # Task 1 VAR analysis
 python scripts/task23_rate_system_var.py     # Tasks 2-3 rate system VAR
 python scripts/task23_robustness_market_rates.py  # Tasks 2-3 market-rate robustness
+python scripts/task23_diff_and_johansen.py   # Johansen levels/diffs + differenced rate VAR + whiteness
 python scripts/task23_toda_yamamoto.py       # Tasks 2-3 Toda-Yamamoto robustness
 python scripts/validate_shapiro_demand.py    # money growth vs Shapiro components
 python scripts/task4_vecm_spec_compare.py    # Task 4 VECM deterministic specs
