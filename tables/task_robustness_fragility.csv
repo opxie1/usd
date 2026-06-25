@@ -1,0 +1,5 @@
+test,p_value,verdict
+money growth -> cpi inflation (full sample),0.0806,fragile 0.05-0.10
+money growth -> pce inflation (full sample),0.0535,fragile 0.05-0.10
+money growth -> ppi inflation (full sample),0.3647,not significant
+money growth -> gdpdef inflation (full sample),0.1328,not significant
