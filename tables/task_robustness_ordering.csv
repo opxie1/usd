@@ -5,6 +5,6 @@ system,ordering,money_to_infl_fevd_h12,fed_to_money_fevd_h12
 "task1 (gdp,money,cpi)",money_g > infl_cpi > gdp_g,0.035,
 "task1 (gdp,money,cpi)",infl_cpi > gdp_g > money_g,0.045,
 "task1 (gdp,money,cpi)",infl_cpi > money_g > gdp_g,0.035,
-task4 (2003+),baseline (fed first),0.08,0.024
-task4 (2003+),money block first,0.054,0.041
+task4 (2003+),baseline (fed first),0.076,0.024
+task4 (2003+),money block first,0.057,0.04
 task4 (2003+),prices first,0.042,0.013

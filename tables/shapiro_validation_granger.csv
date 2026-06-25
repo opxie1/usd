@@ -1,5 +1,5 @@
 component,sample,n_obs,lag_aic,stable,money_to_component_p,component_to_money_p
-demand_yoy,full_1971_2026,227,6,True,0.0968,0.1211
-demand_yoy,qe_era_2003_2026,94,6,True,0.4533,0.431
+demand_yoy,full_1971_2026,227,6,True,0.0968,0.1218
+demand_yoy,qe_era_2003_2026,94,6,True,0.4532,0.4393
 supply_yoy,full_1971_2026,227,6,True,0.0056,0.0003
-supply_yoy,qe_era_2003_2026,94,6,True,0.0781,0.0033
+supply_yoy,qe_era_2003_2026,94,6,True,0.0781,0.0032

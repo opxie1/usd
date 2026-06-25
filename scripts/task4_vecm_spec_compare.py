@@ -42,12 +42,22 @@ def main():
         if rank == 0:
             summary_rows.append(dict(spec=spec["label"], deterministic=spec["deterministic"],
                                      k_ar_diff=k, rank=0, n_obs=len(lv), llf=np.nan,
+                                     resid_whiteness_p=np.nan, resid_normality_p=np.nan,
                                      note="no cointegration at 5 percent"))
             continue
         res = VECM(lv, k_ar_diff=k, coint_rank=rank, deterministic=spec["deterministic"]).fit()
+        try:
+            wp = round(float(res.test_whiteness(nlags=k + 8).pvalue), 4)
+        except Exception:
+            wp = np.nan
+        try:
+            npv = round(float(res.test_normality().pvalue), 4)
+        except Exception:
+            npv = np.nan
         summary_rows.append(dict(spec=spec["label"], deterministic=spec["deterministic"],
                                  k_ar_diff=k, rank=rank, n_obs=len(lv),
-                                 llf=round(float(res.llf), 1), note=""))
+                                 llf=round(float(res.llf), 1),
+                                 resid_whiteness_p=wp, resid_normality_p=npv, note=""))
         a = pd.DataFrame(res.alpha, index=lv.columns,
                          columns=[f"{spec['label']}_alpha_ec{i+1}" for i in range(rank)])
         b = pd.DataFrame(res.beta, index=lv.columns,

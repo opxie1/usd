@@ -1,6 +1,6 @@
 caused,money_g,rate_federal,rate_mortgage,rate_business,rate_consumer
-money_g,,0.0004,0.2932,0.0065,0.0678
-rate_federal,0.6984,,0.5392,0.4974,0.6238
-rate_mortgage,0.3837,0.0,,0.465,0.5975
-rate_business,0.2304,0.0292,0.0312,,0.3068
-rate_consumer,0.1379,0.0,0.0191,0.0884,
+money_g,,0.0004,0.2932,0.0065,0.0677
+rate_federal,0.6983,,0.5392,0.4973,0.6238
+rate_mortgage,0.3837,0.0,,0.465,0.5976
+rate_business,0.2303,0.0292,0.0312,,0.3068
+rate_consumer,0.138,0.0,0.0191,0.0884,

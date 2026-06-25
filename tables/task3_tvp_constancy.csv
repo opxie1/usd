@@ -1,14 +1,14 @@
 model,coefficient,state_innovation_sd,verdict
-task5 aggregate private borrowing,const,1.3649,time varying
-task5 aggregate private borrowing,d_rate_mortgage_lag1,0.102,time varying
+task5 aggregate private borrowing,const,1.3677,time varying
+task5 aggregate private borrowing,d_rate_mortgage_lag1,0.0989,time varying
 task5 aggregate private borrowing,pce_real_g_lag1,0.0,effectively constant
-task5 aggregate private borrowing,fed_debt_g_lag1,0.007,effectively constant
-"task5b mortgage (market, lean)",const,1.2607,time varying
+task5 aggregate private borrowing,fed_debt_g_lag1,0.0074,effectively constant
+"task5b mortgage (market, lean)",const,1.2574,time varying
 "task5b mortgage (market, lean)",d_rate_lag1,0.0,effectively constant
 "task5b mortgage (market, lean)",money_lag1,0.0,effectively constant
-"task5b consumer (market, lean)",const,2.2899,time varying
+"task5b consumer (market, lean)",const,2.29,time varying
 "task5b consumer (market, lean)",d_rate_lag1,0.0,effectively constant
 "task5b consumer (market, lean)",money_lag1,0.0,effectively constant
-"task5b business (market, lean)",const,1.8135,time varying
-"task5b business (market, lean)",d_rate_lag1,0.2324,time varying
-"task5b business (market, lean)",money_lag1,0.0395,time varying
+"task5b business (market, lean)",const,1.836,time varying
+"task5b business (market, lean)",d_rate_lag1,0.2287,time varying
+"task5b business (market, lean)",money_lag1,0.0392,time varying

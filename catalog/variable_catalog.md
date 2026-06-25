@@ -41,10 +41,10 @@ Metadata below (title, units, frequency, coverage) is captured live from the API
 
 | status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
 |---|---|---|---|---|---|---|---|---|
-| primary | `m2` | `M2SL` | M2 | Billions of Dollars | Monthly | SA | 1959-01-01 .. 2026-04-01 | last |
-| primary | `monetary_base` | `BOGMBASE` | Monetary Base: Total | Billions of Dollars | Monthly | NSA | 1959-01-01 .. 2026-04-01 | last |
-| alternate | `m2_real` | `M2REAL` | Real M2 Money Stock | Billions of 1982-84 Dollars | Monthly | SA | 1959-01-01 .. 2026-04-01 | last |
-| alternate | `reserve_balances` | `WRESBAL` | Liabilities and Capital: Other Factors Draining Reserve Balances: Reserve Balances with Federal Reserve Banks: Week Average | Millions of U.S. Dollars | Weekly, Ending Wednesday | NSA | 2002-12-18 .. 2026-06-03 | last |
+| primary | `m2` | `M2SL` | M2 | Billions of Dollars | Monthly | SA | 1959-01-01 .. 2026-05-01 | last |
+| primary | `monetary_base` | `BOGMBASE` | Monetary Base: Total | Billions of Dollars | Monthly | NSA | 1959-01-01 .. 2026-05-01 | last |
+| alternate | `m2_real` | `M2REAL` | Real M2 Money Stock | Billions of 1982-84 Dollars | Monthly | SA | 1959-01-01 .. 2026-05-01 | last |
+| alternate | `reserve_balances` | `WRESBAL` | Liabilities and Capital: Other Factors Draining Reserve Balances: Reserve Balances with Federal Reserve Banks: Week Average | Millions of U.S. Dollars | Weekly, Ending Wednesday | NSA | 2002-12-18 .. 2026-06-17 | last |
 | alternate | `total_reserves` | `TRESEGUSM052N` | Total Reserves excluding Gold for United States | Millions of Dollars | Monthly | NSA | 1950-12-01 .. 2026-03-01 | last |
 
 ## Price Indices (for Inflation)
@@ -53,11 +53,11 @@ Metadata below (title, units, frequency, coverage) is captured live from the API
 |---|---|---|---|---|---|---|---|---|
 | primary | `cpi` | `CPIAUCSL` | Consumer Price Index for All Urban Consumers: All Items in U.S. City Average | Index 1982-1984=100 | Monthly | SA | 1947-01-01 .. 2026-05-01 | avg |
 | primary | `gdp_deflator` | `GDPDEF` | Gross Domestic Product: Implicit Price Deflator | Index 2017=100 | Quarterly | SA | 1947-01-01 .. 2026-01-01 | avg |
-| primary | `pce_price` | `PCEPI` | Personal Consumption Expenditures: Chain-type Price Index | Index 2017=100 | Monthly | SA | 1959-01-01 .. 2026-04-01 | avg |
-| primary | `ppi_allcommodities` | `PPIACO` | Producer Price Index by Commodity: All Commodities | Index 1982=100 | Monthly | NSA | 1913-01-01 .. 2026-04-01 | avg |
+| primary | `pce_price` | `PCEPI` | Personal Consumption Expenditures: Chain-type Price Index | Index 2017=100 | Monthly | SA | 1959-01-01 .. 2026-05-01 | avg |
+| primary | `ppi_allcommodities` | `PPIACO` | Producer Price Index by Commodity: All Commodities | Index 1982=100 | Monthly | NSA | 1913-01-01 .. 2026-05-01 | avg |
 | alternate | `cpi_core` | `CPILFESL` | Consumer Price Index for All Urban Consumers: All Items Less Food and Energy in U.S. City Average | Index 1982-1984=100 | Monthly | SA | 1957-01-01 .. 2026-05-01 | avg |
-| alternate | `pce_price_core` | `PCEPILFE` | Personal Consumption Expenditures Excluding Food and Energy (Chain-Type Price Index) | Index 2017=100 | Monthly | SA | 1959-01-01 .. 2026-04-01 | avg |
-| alternate | `ppi_finaldemand` | `PPIFIS` | Producer Price Index by Commodity: Final Demand | Index Nov 2009=100 | Monthly | SA | 2009-11-01 .. 2026-04-01 | avg |
+| alternate | `pce_price_core` | `PCEPILFE` | Personal Consumption Expenditures Excluding Food and Energy (Chain-Type Price Index) | Index 2017=100 | Monthly | SA | 1959-01-01 .. 2026-05-01 | avg |
+| alternate | `ppi_finaldemand` | `PPIFIS` | Producer Price Index by Commodity: Final Demand | Index Nov 2009=100 | Monthly | SA | 2009-11-01 .. 2026-05-01 | avg |
 
 ## Real Output (Controls)
 
@@ -87,7 +87,7 @@ Metadata below (title, units, frequency, coverage) is captured live from the API
 
 | status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
 |---|---|---|---|---|---|---|---|---|
-| primary | `rate_mortgage_30y` | `MORTGAGE30US` | 30-Year Fixed Rate Mortgage Average in the United States | Percent | Weekly, Ending Thursday | NSA | 1971-04-02 .. 2026-06-04 | avg |
+| primary | `rate_mortgage_30y` | `MORTGAGE30US` | 30-Year Fixed Rate Mortgage Average in the United States | Percent | Weekly, Ending Thursday | NSA | 1971-04-02 .. 2026-06-25 | avg |
 
 ## Interest Rate: Business
 
@@ -109,54 +109,54 @@ Metadata below (title, units, frequency, coverage) is captured live from the API
 
 | status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
 |---|---|---|---|---|---|---|---|---|
-| primary | `debt_federal` | `GFDEBTN` | Federal Debt: Total Public Debt | Millions of Dollars | Quarterly, End of Period | NSA | 1966-01-01 .. 2025-10-01 | last |
-| alternate | `debt_federal_public` | `FYGFDPUN` | Federal Debt Held by the Public | Millions of Dollars | Quarterly, End of Period | NSA | 1970-01-01 .. 2025-10-01 | last |
+| primary | `debt_federal` | `GFDEBTN` | Federal Debt: Total Public Debt | Millions of Dollars | Quarterly, End of Period | NSA | 1966-01-01 .. 2026-01-01 | last |
+| alternate | `debt_federal_public` | `FYGFDPUN` | Federal Debt Held by the Public | Millions of Dollars | Quarterly, End of Period | NSA | 1970-01-01 .. 2026-01-01 | last |
 
 ## Debt: State and Local
 
 | status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
 |---|---|---|---|---|---|---|---|---|
-| primary | `debt_state_local` | `SLGSDODNS` | State and Local Governments; Debt Securities and Loans; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2025-10-01 | last |
+| primary | `debt_state_local` | `SLGSDODNS` | State and Local Governments; Debt Securities and Loans; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2026-01-01 | last |
 
 ## Debt: Mortgage
 
 | status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
 |---|---|---|---|---|---|---|---|---|
-| primary | `debt_mortgage_household` | `HHMSDODNS` | Households and Nonprofit Organizations; One-to-Four-Family Residential Mortgages; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2025-10-01 | last |
-| alternate | `debt_mortgage_total` | `ASTMA` | All Sectors; Total Mortgages; Asset, Level | Millions of U.S. Dollars | Quarterly, End of Period | NSA | 1945-10-01 .. 2025-10-01 | last |
+| primary | `debt_mortgage_household` | `HHMSDODNS` | Households and Nonprofit Organizations; One-to-Four-Family Residential Mortgages; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2026-01-01 | last |
+| alternate | `debt_mortgage_total` | `ASTMA` | All Sectors; Total Mortgages; Asset, Level | Millions of U.S. Dollars | Quarterly, End of Period | NSA | 1945-10-01 .. 2026-01-01 | last |
 
 ## Debt: Business
 
 | status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
 |---|---|---|---|---|---|---|---|---|
-| primary | `debt_business_corporate` | `BCNSDODNS` | Nonfinancial Corporate Business; Debt Securities and Loans; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2025-10-01 | last |
-| alternate | `debt_business` | `TBSDODNS` | Nonfinancial Business; Debt Securities and Loans; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2025-10-01 | last |
+| primary | `debt_business_corporate` | `BCNSDODNS` | Nonfinancial Corporate Business; Debt Securities and Loans; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2026-01-01 | last |
+| alternate | `debt_business` | `TBSDODNS` | Nonfinancial Business; Debt Securities and Loans; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2026-01-01 | last |
 
 ## Debt: Consumer/Personal
 
 | status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
 |---|---|---|---|---|---|---|---|---|
 | primary | `debt_consumer_credit` | `TOTALSL` | Total Consumer Credit Owned and Securitized | Millions of U.S. Dollars | Monthly | SA | 1943-01-01 .. 2026-04-01 | last |
-| alternate | `debt_household_total` | `CMDEBT` | Households and Nonprofit Organizations; Debt Securities and Loans; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2025-10-01 | last |
+| alternate | `debt_household_total` | `CMDEBT` | Households and Nonprofit Organizations; Debt Securities and Loans; Liability, Level | Millions of U.S. Dollars | Quarterly, End of Period | SA | 1945-10-01 .. 2026-01-01 | last |
 
 ## Federal Reserve Balance Sheet
 
 | status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
 |---|---|---|---|---|---|---|---|---|
-| primary | `fed_mbs` | `WSHOMCB` | Assets: Securities Held Outright: Mortgage-Backed Securities: Wednesday Level | Millions of U.S. Dollars | Weekly, As of Wednesday | NSA | 2002-12-18 .. 2026-06-03 | last |
-| primary | `fed_total_assets` | `WALCL` | Assets: Total Assets: Total Assets (Less Eliminations from Consolidation): Wednesday Level | Millions of U.S. Dollars | Weekly, As of Wednesday | NSA | 2002-12-18 .. 2026-06-03 | last |
-| primary | `fed_treasuries` | `TREAST` | Assets: Securities Held Outright: U.S. Treasury Securities: All: Wednesday Level | Millions of U.S. Dollars | Weekly, As of Wednesday | NSA | 2002-12-18 .. 2026-06-03 | last |
-| alternate | `fed_securities_total` | `WSHOSHO` | Assets: Securities Held Outright: Securities Held Outright: Wednesday Level | Millions of U.S. Dollars | Weekly, As of Wednesday | NSA | 2002-12-18 .. 2026-06-03 | last |
+| primary | `fed_mbs` | `WSHOMCB` | Assets: Securities Held Outright: Mortgage-Backed Securities: Wednesday Level | Millions of U.S. Dollars | Weekly, As of Wednesday | NSA | 2002-12-18 .. 2026-06-17 | last |
+| primary | `fed_total_assets` | `WALCL` | Assets: Total Assets: Total Assets (Less Eliminations from Consolidation): Wednesday Level | Millions of U.S. Dollars | Weekly, As of Wednesday | NSA | 2002-12-18 .. 2026-06-17 | last |
+| primary | `fed_treasuries` | `TREAST` | Assets: Securities Held Outright: U.S. Treasury Securities: All: Wednesday Level | Millions of U.S. Dollars | Weekly, As of Wednesday | NSA | 2002-12-18 .. 2026-06-17 | last |
+| alternate | `fed_securities_total` | `WSHOSHO` | Assets: Securities Held Outright: Securities Held Outright: Wednesday Level | Millions of U.S. Dollars | Weekly, As of Wednesday | NSA | 2002-12-18 .. 2026-06-17 | last |
 
 ## Bank Credit (Thesis Variables)
 
 | status | name (panel column) | FRED ID | title | units | freq | SA | coverage | agg |
 |---|---|---|---|---|---|---|---|---|
-| primary | `bank_credit_total` | `TOTBKCR` | Bank Credit, All Commercial Banks | Billions of U.S. Dollars | Weekly, Ending Wednesday | SA | 1973-01-03 .. 2026-05-27 | last |
-| alternate | `bank_ci_loans` | `BUSLOANS` | Commercial and Industrial Loans, All Commercial Banks | Billions of U.S. Dollars | Monthly | SA | 1947-01-01 .. 2026-04-01 | last |
-| alternate | `bank_consumer_loans` | `CONSUMER` | Consumer Loans, All Commercial Banks | Billions of U.S. Dollars | Monthly | SA | 1947-01-01 .. 2026-04-01 | last |
-| alternate | `bank_loans_leases` | `TOTLL` | Loans and Leases in Bank Credit, All Commercial Banks | Billions of U.S. Dollars | Weekly, Ending Wednesday | SA | 1973-01-03 .. 2026-05-27 | last |
-| alternate | `bank_realestate_loans` | `REALLN` | Real Estate Loans, All Commercial Banks | Billions of U.S. Dollars | Monthly | SA | 1947-01-01 .. 2026-04-01 | last |
+| primary | `bank_credit_total` | `TOTBKCR` | Bank Credit, All Commercial Banks | Billions of U.S. Dollars | Weekly, Ending Wednesday | SA | 1973-01-03 .. 2026-06-10 | last |
+| alternate | `bank_ci_loans` | `BUSLOANS` | Commercial and Industrial Loans, All Commercial Banks | Billions of U.S. Dollars | Monthly | SA | 1947-01-01 .. 2026-05-01 | last |
+| alternate | `bank_consumer_loans` | `CONSUMER` | Consumer Loans, All Commercial Banks | Billions of U.S. Dollars | Monthly | SA | 1947-01-01 .. 2026-05-01 | last |
+| alternate | `bank_loans_leases` | `TOTLL` | Loans and Leases in Bank Credit, All Commercial Banks | Billions of U.S. Dollars | Weekly, Ending Wednesday | SA | 1973-01-03 .. 2026-06-10 | last |
+| alternate | `bank_realestate_loans` | `REALLN` | Real Estate Loans, All Commercial Banks | Billions of U.S. Dollars | Monthly | SA | 1947-01-01 .. 2026-05-01 | last |
 
 ## NIPA Interest Payments (for implied rates)
 
