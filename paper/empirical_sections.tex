@@ -1,0 +1,80 @@
+\section{Data}
+\label{sec:data}
+
+All series were retrieved from the Federal Reserve Bank of St.\ Louis (FRED); the originating agencies are listed in Table~\ref{tab:variables}. The panel is quarterly and runs from 1959 through 2026 where series permit. Series reported at higher frequencies are converted to quarterly by averaging within the quarter for interest rates and price indices and by taking the end-of-quarter value for stocks. Series from the Financial Accounts of the United States (Z.1) and the National Income and Product Accounts (NIPA) are already quarterly.
+
+We construct three groups of derived variables. Broad money net of base money is M2 less the monetary base, both in billions of dollars. Inflation is measured as the annualized quarterly log difference of each price index and, where noted, as its year-over-year change. Sectoral interest rates are constructed as interest payments divided by the corresponding stock of debt, which yields a weighted-average rate for the federal, state and local, business, and consumer sectors; for state and local governments we net out the imputed interest on public-pension liabilities that NIPA includes in interest payments, and for mortgages we use the market thirty-year fixed rate because long mortgage durations make the current rate more informative than a weighted average. We use market interest rates for the same sectors as a robustness comparison.
+
+Because this is a time-series study, we present the series as plots rather than as conventional summary statistics. Figures~\ref{fig:money} through~\ref{fig:fed} show the money supply, inflation, sectoral debt, interest rates, and the Federal Reserve balance sheet, and Figure~\ref{fig:impliedvsmarket} compares the implied and market rates by sector.
+
+\section{Money Supply and Inflation}
+\label{sec:money_inflation}
+
+We first evaluate the link between money and inflation with a trivariate vector autoregression (VAR) in real output growth, the growth of M2 less the monetary base, and inflation. Augmented Dickey--Fuller and KPSS tests (Table~\ref{tab:unitroots}) indicate that the log levels are integrated of order one while growth rates and inflation are treated as stationary. We select the lag length by the Akaike information criterion, capped at eight lags, confirm that all inverse roots lie inside the unit circle, and report Granger-causality tests, orthogonalized impulse responses under a recursive ordering that places output first and prices last, and the associated forecast-error variance decomposition.
+
+Table~\ref{tab:task1} collects the results for the four inflation measures. Over the full sample the evidence that money growth Granger-causes inflation is marginal, and before the pandemic the stronger direction runs from inflation to money. In the short post-2020 window the share of inflation forecast-error variance attributable to money shocks is larger, but this sample is only twenty-five quarters and we do not rest inference on it. Figure~\ref{fig:task1irf} shows the impulse response of inflation to a money-growth shock, and Figure~\ref{fig:rollgranger} shows how the money-inflation relationship moves over time in a rolling window.
+
+\section{The Interest-Rate System}
+\label{sec:rates}
+
+We next examine how the five sectoral interest rates respond to the money supply and to one another. The appropriate specification depends on cointegration, which we assess with Johansen trace tests in both levels and differences (Table~\ref{tab:johansen}). The implied rates are not cointegrated in levels, so we estimate that system as a VAR in first differences (Table~\ref{tab:ratehier_implied}). The market rates are cointegrated, so we model them with a vector error-correction model (VECM) instead (Table~\ref{tab:ratehier_market}); differencing a cointegrated system would discard the long-run relationships. Because interest rates are highly persistent, we confirm the causal ordering with lag-augmented (Toda--Yamamoto) tests as well.
+
+In the correctly specified market-rate VECM the federal rate Granger-causes the other rates while the reverse is insignificant, giving a one-way hierarchy consistent with monetary policy moving rates across the term structure. In the differenced implied-rate system the federal rate still leads the others, though feedback is present. Figure~\ref{fig:heatmap} summarizes the pairwise Granger-causality pattern. The contrast between the cointegrated market rates and the non-cointegrated implied rates is itself a result: policy moves market rates together, but realized borrowing costs across sectors do not share a single long-run trend, which points to differences in borrower behavior across sectors.
+
+\section{Federal Reserve Transactions}
+\label{sec:fed}
+
+To identify the role of central-bank policy, we estimate a six-variable system in Federal Reserve securities growth, base-money growth, the growth of M2 less base, the change in the funds rate, the change in the ten-year yield, and CPI inflation, from 2003 onward (the balance-sheet series begin in late 2002). Table~\ref{tab:task4granger} reports the Granger tests. Federal Reserve purchases drive the monetary base throughout, and before the pandemic they also drive broad money and the funds rate. Once the pandemic quarters enter, the channel from purchases to broad money weakens, consistent with the pandemic-era expansion of M2 arising through fiscal rather than open-market operations. Johansen tests indicate cointegration, so we also estimate a VECM; Table~\ref{tab:task4vecm} reports both deterministic specifications together with residual diagnostics, and Figure~\ref{fig:task4irf} shows the responses to a securities-purchase shock.
+
+\section{The Demand for Loanable Funds}
+\label{sec:loanable}
+
+Finally we ask what is driving the demand for loanable funds. Table~\ref{tab:task5period} compares period averages before, during, and after the pandemic, and Figure~\ref{fig:shares} plots the components of nominal output; consumption's share is essentially flat, so the higher demand for funds is broad-based borrowing rather than a shift toward consumption. We then estimate time-varying-coefficient regressions of each sector's borrowing growth on its own interest rate and lagged money growth, using both a Kalman-smoothed random-walk coefficient model and a rolling ordinary-least-squares window, and under both M2 less base and base money. Table~\ref{tab:task5b} reports the coefficient on money growth by sector, and Figure~\ref{fig:task5b} plots it over time. Consumer borrowing carries a positive coefficient on money growth while business borrowing does not and turns negative after 2020, consistent with a credit-demand mechanism that is weaker where borrowing funds value creation.
+
+\section{Robustness}
+\label{sec:robustness}
+
+We assess several threats to the results. Table~\ref{tab:ordering} shows that the variance decompositions are stable across alternative recursive orderings. Table~\ref{tab:inflform} shows that the money-inflation results are insensitive to treating inflation as stationary or as a first difference. Table~\ref{tab:break} reports a Quandt--Andrews sup-Wald test with a bootstrap $p$-value; the dominant structural break in the money-inflation relation is the early-1980s regime change rather than 2020, so we treat the post-2020 evidence as descriptive. Table~\ref{tab:constancy} reports the estimated innovation variance of each time-varying coefficient, which shows that several coefficients are effectively constant while the business money coefficient genuinely varies. Table~\ref{tab:fragility} records which of the headline money-inflation results are statistically fragile.
+
+\clearpage
+\section*{Figures}
+
+\begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{figures/fig1_money_supply.png}
+\caption{M2, the monetary base, and M2 less the monetary base.}\label{fig:money}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{figures/fig2_inflation.png}
+\caption{Inflation rates, year over year.}\label{fig:inflation}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{figures/fig3_debt.png}
+\caption{Debt levels by sector.}\label{fig:debt}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{figures/fig4_interest_rates.png}
+\caption{Interest rates by sector.}\label{fig:rates}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{figures/fig5_fed_balance_sheet.png}
+\caption{Federal Reserve balance sheet: total assets, Treasury securities, and mortgage-backed securities.}\label{fig:fed}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{figures/fig6_implied_vs_market.png}
+\caption{Implied sectoral rates (interest over debt) versus market rates.}\label{fig:impliedvsmarket}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics[width=0.9\textwidth]{figures/task1_irf_cpi.png}
+\caption{Response of CPI inflation to a one-standard-deviation shock to the growth of M2 less base, with a ninety-five percent band.}\label{fig:task1irf}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{figures/task1_rolling_granger.png}
+\caption{Rolling Granger-causality $p$-values for money growth causing inflation.}\label{fig:rollgranger}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics[width=0.85\textwidth]{figures/task23_granger_heatmap.png}
+\caption{Granger-causality $p$-values in the differenced implied-rate system.}\label{fig:heatmap}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{figures/task4_irf_fed_shock.png}
+\caption{Orthogonalized responses to a Federal Reserve securities-growth shock.}\label{fig:task4irf}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{figures/task5_gdp_shares.png}
+\caption{Components of nominal output as shares of GDP.}\label{fig:shares}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{figures/task5b_tvp_money_coef.png}
+\caption{Time-varying coefficient on money growth in each sector's borrowing equation, market rates.}\label{fig:task5b}\end{figure}
+
+\clearpage
+\section*{Tables}
+\input{tables_auto}
