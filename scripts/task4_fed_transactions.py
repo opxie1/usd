@@ -97,8 +97,15 @@ def main():
         all_rows.extend(rows)
         extras_rows.append(dict(sample=sample_name, **extras))
         if sample_name == "full_2003_2026":
+            disp = {"fed_g": "Fed securities", "base_g": "base money", "money_g": "M2 less base",
+                    "d_ffr": "funds rate", "d_gs10": "10y yield", "infl_cpi": "CPI inflation"}
             fig = irf.plot(orth=True, impulse="fed_g")
-            fig.suptitle(f"Orthogonalized IRFs to a Fed securities growth shock (full sample 2003-2026)\n{ORDERING_NOTE}", fontsize=9)
+            for ax in fig.axes:
+                t = ax.get_title()
+                for k, v in disp.items():
+                    t = t.replace(k, v)
+                ax.set_title(t)
+            fig.suptitle("Orthogonalized responses to a Fed securities-growth shock, 2003--2026", fontsize=11)
             fig.tight_layout()
             fig.savefig(os.path.join(FIG, "task4_irf_fed_shock.png"), dpi=150)
             plt.close(fig)

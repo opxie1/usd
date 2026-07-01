@@ -70,8 +70,11 @@ def heatmap(mat, title, path):
     fig, ax = plt.subplots(figsize=(8.5, 7))
     vals = mat.values.astype(float)
     im = ax.imshow(np.ma.masked_invalid(vals), cmap="RdYlGn", vmin=0, vmax=0.2)
-    ax.set_xticks(range(len(mat.columns)), mat.columns, rotation=45, ha="right")
-    ax.set_yticks(range(len(mat.index)), mat.index)
+    disp = {"money_g": "Money", "d_rate_federal": "Federal", "d_rate_state_local": "State/local",
+            "d_rate_mortgage": "Mortgage", "d_rate_business": "Business", "d_rate_consumer": "Consumer"}
+    labs = [disp.get(c, c) for c in mat.columns]
+    ax.set_xticks(range(len(mat.columns)), labs, rotation=45, ha="right")
+    ax.set_yticks(range(len(mat.index)), labs)
     ax.set_xlabel("causing (column Granger-causes row)")
     ax.set_ylabel("caused")
     for i in range(len(mat.index)):

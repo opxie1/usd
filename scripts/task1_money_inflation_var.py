@@ -136,8 +136,11 @@ def main():
             row, res, irf = run_var(df, measure, sample_name, start, end)
             rows.append(row)
             if sample_name == "full_1959_2026":
+                meas = {"cpi": "CPI", "pce": "PCE", "ppi": "PPI", "gdpdef": "GDP-deflator"}
                 fig = irf.plot(orth=True, impulse="money_g", response=f"infl_{measure}")
-                fig.suptitle(f"Orthogonalized IRF: money growth shock -> {measure} inflation (full sample)\n{ORDERING_NOTE}", fontsize=9)
+                for ax in fig.axes:
+                    ax.set_title(f"Money-growth shock to {meas[measure]} inflation")
+                fig.suptitle("Orthogonalized impulse response, full sample", fontsize=11)
                 fig.tight_layout()
                 fig.savefig(os.path.join(FIG, f"task1_irf_{measure}.png"), dpi=150)
                 plt.close(fig)
@@ -150,16 +153,17 @@ def main():
     roll_df = pd.DataFrame(roll)
     roll_df.rename_axis("window_end").to_csv(os.path.join(TAB, "task1_rolling_granger.csv"))
 
+    meas = {"cpi": "CPI", "pce": "PCE", "ppi": "PPI", "gdpdef": "GDP deflator"}
     fig, axes = plt.subplots(2, 2, figsize=(12, 8))
     for ax, measure in zip(axes.ravel(), MEASURES):
         s = roll_df[measure]
         ax.plot(s.index, s.values, linewidth=1.2)
         ax.axhline(0.05, color="red", linestyle="--", linewidth=1.0)
-        ax.set_title(f"{measure}: p-value, money growth Granger-causes inflation")
+        ax.set_title(f"{meas[measure]}: money growth causes inflation")
         ax.set_ylabel("p-value")
         ax.set_ylim(0, 1)
         ax.grid(True, alpha=0.3)
-    fig.suptitle("Rolling 60-quarter Granger causality (VAR(4): gdp_g, money_g, inflation)")
+    fig.suptitle("Rolling 60-quarter Granger-causality p-values")
     fig.tight_layout()
     fig.savefig(os.path.join(FIG, "task1_rolling_granger.png"), dpi=150)
     plt.close(fig)

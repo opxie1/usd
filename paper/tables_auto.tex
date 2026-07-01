@@ -1,4 +1,5 @@
-\begin{longtable}{@{}l p{5.7cm} p{2.7cm} p{3.1cm} l@{}}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}l p{5.3cm} p{2.4cm} p{2.7cm} l@{}}
 \caption{Variables, units, and sources. All series were retrieved from FRED (Federal Reserve Bank of St.\ Louis); ``Source'' gives the originating agency. Coverage is the first and last year available.}\label{tab:variables}\\
 \toprule
 Series ID & Description & Units & Source & Coverage \\
@@ -61,16 +62,17 @@ PCEC & Personal Consumption Expenditures & Billions of Dollars & BEA (NIPA) & 19
 GPDI & Gross Private Domestic Investment & Billions of Dollars & BEA (NIPA) & 1947--2026 \\
 GCE & Government Consumption Expenditures and Gross Investment & Billions of Dollars & BEA (NIPA) & 1947--2026 \\
 NETEXP & Net Exports of Goods and Services & Billions of Dollars & BEA (NIPA) & 1947--2026 \\
-\end{longtable}
+\end{longtable}}
 
 \begin{table}[htbp]
 \centering
-\small
-\caption{Money supply and inflation: trivariate VAR of real output growth, growth of M2 less the monetary base, and inflation. The $p$-values are Granger-causality tests; the FEVD share is the fraction of inflation forecast-error variance at horizon~12 attributable to a money-growth shock.}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Money supply and inflation: trivariate VAR of real output growth, growth of M2 less the monetary base ($m$), and inflation ($\pi$). The $p$-values are Granger-causality tests; the FEVD share is the fraction of inflation forecast-error variance at horizon~12 attributable to a money-growth shock.}
 \label{tab:task1}
 \begin{tabular}{llrrrrrr}
 \toprule
-Measure & Sample & $N$ & Lags & $p$: money$\to\pi$ & $p$: $\pi\to$money & FEVD money & IRF peak \\
+Measure & Sample & $N$ & Lags & $p$: $m\!\to\!\pi$ & $p$: $\pi\!\to\!m$ & FEVD $m$ & IRF peak \\
 \midrule
 CPI & Full (1959--2026) & 268 & 3 & 0.081 & 0.008 & 0.053 & 0.348 \\
 CPI & Pre-COVID (1959--2019) & 243 & 4 & 0.199 & 0.002 & 0.027 & 0.192 \\
@@ -91,6 +93,7 @@ GDP deflator & Post-2020 (2020--2026) & 25 & 1 & 0.204 & 0.770 & 0.249 & 0.681 \
 \begin{table}[htbp]
 \centering
 \small
+
 \caption{Unit-root tests. ADF is the augmented Dickey--Fuller statistic (null: unit root); KPSS is the Kwiatkowski--Phillips--Schmidt--Shin statistic (null: stationarity). ``$c,t$'' includes a constant and trend, ``$c$'' a constant only.}
 \label{tab:unitroots}
 \begin{tabular}{llrrrrr}
@@ -116,6 +119,7 @@ GDP-deflator inflation & $c$ & 265 & -2.758 & 0.065 & 0.555 & 0.029 \\
 \begin{table}[htbp]
 \centering
 \small
+
 \caption{Johansen trace tests for the interest-rate systems, unrestricted constant. The implied rates are not cointegrated in levels; the market rates are. Differenced series reject all ranks, confirming stationarity. Restricted-constant and trend cases give the same ranks.}
 \label{tab:johansen}
 \begin{tabular}{llrrrc}
@@ -147,6 +151,7 @@ Market & Differences & 3 & 38.53 & 3.84 & Yes \\
 \begin{table}[htbp]
 \centering
 \small
+
 \caption{Differenced implied-rate VAR (the implied rates are not cointegrated). Joint Granger tests of the federal-rate hierarchy; min$|$root$|$ is the smallest modulus of the characteristic roots.}
 \label{tab:ratehier_implied}
 \begin{tabular}{lrrrrrr}
@@ -162,6 +167,7 @@ Pre-COVID & 194 & 4 & 1.125 & $<$0.001 & 0.012 & $<$0.001 \\
 \begin{table}[htbp]
 \centering
 \small
+
 \caption{Market-rate VECM (the market rates are cointegrated). The federal rate Granger-causes the other rates while the reverse is insignificant, giving a one-way hierarchy in the correctly specified model.}
 \label{tab:ratehier_market}
 \begin{tabular}{lrrr}
@@ -176,6 +182,7 @@ Market rates (rank 3) & $<$0.001 & 0.158 & 0.132 \\
 \begin{table}[htbp]
 \centering
 \small
+
 \caption{Federal Reserve transactions: Granger tests in the six-variable system (Fed securities growth, base growth, M2-less-base growth, change in the funds rate, change in the ten-year yield, CPI inflation), 2003Q1 onward.}
 \label{tab:task4granger}
 \begin{tabular}{lllr}
@@ -203,6 +210,7 @@ Pre-COVID (2003--2019) & CPI inflation & M2$-$base growth & 0.020 \\
 \begin{table}[htbp]
 \centering
 \small
+
 \caption{Federal Reserve transactions VECM under two deterministic specifications. Residuals are white at the five percent level; normality is rejected, as is common for macroeconomic data.}
 \label{tab:task4vecm}
 \begin{tabular}{lrrrrr}
@@ -218,6 +226,7 @@ Constant $+$ trend & 4 & 95 & 975.7 & 0.108 & $<$0.001 \\
 \begin{table}[htbp]
 \centering
 \small
+
 \caption{Period averages, annualized percent (the PCE share is percent of nominal GDP). Private borrowing is the growth of household mortgages plus nonfinancial business plus consumer credit.}
 \label{tab:task5period}
 \begin{tabular}{lrrrrrr}
@@ -234,6 +243,7 @@ Period & Real GDP & Real PCE & Priv.\ borrow. & M2$-$base & CPI (yoy) & PCE shar
 \begin{table}[htbp]
 \centering
 \small
+
 \caption{Per-sector demand for loanable funds: coefficient on lagged money growth in each debt type's borrowing equation, Kalman-smoothed time-varying estimates under market rates. The full grid (both rate definitions and both estimators) is in the replication files.}
 \label{tab:task5b}
 \begin{tabular}{lllrrr}
@@ -259,6 +269,7 @@ Business & Base money & With controls & 0.038 & 0.087 & 0.96 \\
 \begin{table}[htbp]
 \centering
 \small
+
 \caption{Ordering robustness: forecast-error variance shares at horizon~12 across alternative recursive (Cholesky) orderings. The shares stay in a narrow band, so the conclusions are not an artifact of one ordering.}
 \label{tab:ordering}
 \begin{tabular}{llrr}
@@ -281,6 +292,7 @@ Fed-transactions VAR & Prices first & 0.042 & 0.013 \\
 \begin{table}[htbp]
 \centering
 \small
+
 \caption{Inflation-form sensitivity: money-to-inflation results with inflation in levels versus first differences. The conclusions are stable across the two treatments.}
 \label{tab:inflform}
 \begin{tabular}{lrrrr}
@@ -298,6 +310,7 @@ GDP deflator & 0.130 & 0.046 & 0.220 & 0.010 \\
 \begin{table}[htbp]
 \centering
 \small
+
 \caption{Quandt--Andrews sup-Wald test for a structural break in the money-inflation relation, with a residual-bootstrap $p$-value and fifteen percent trimming. The dominant break is the early-1980s regime change, not 2020.}
 \label{tab:break}
 \begin{tabular}{lrlrr}
@@ -312,7 +325,8 @@ PCE inflation & 8.18 & 1981Q2 & 0.003 & 268 \\
 
 \begin{table}[htbp]
 \centering
-\small
+\footnotesize
+\setlength{\tabcolsep}{4pt}
 \caption{Time-varying-coefficient constancy: the estimated random-walk innovation standard deviation of each coefficient. A value of zero means the coefficient is effectively constant.}
 \label{tab:constancy}
 \begin{tabular}{llll}
@@ -339,6 +353,7 @@ Business (market rate) & Money growth $(t{-}1)$ & 0.039 & Time-varying \\
 \begin{table}[htbp]
 \centering
 \small
+
 \caption{Fragility of the headline money-to-inflation result across the four inflation measures.}
 \label{tab:fragility}
 \begin{tabular}{lll}

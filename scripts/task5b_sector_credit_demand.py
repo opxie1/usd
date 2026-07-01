@@ -127,7 +127,7 @@ def panel_plot(ax, store, sector, method, rate_type, spec):
         ax.fill_between(beta.index, beta - 1.96 * se, beta + 1.96 * se, color=colors[money_label], alpha=0.18)
     ax.axhline(0, color="black", linewidth=0.8)
     ax.axvline(COVID, color="gray", linestyle=":", linewidth=1.0)
-    ax.set_title(f"{sector} borrowing ({rate_type} rate, {spec}): coefficient on lagged money growth")
+    ax.set_title(f"{sector.capitalize()} borrowing: coefficient on lagged money growth")
     ax.set_ylabel("Coefficient")
     ax.legend(fontsize=8)
     ax.grid(True, alpha=0.3)

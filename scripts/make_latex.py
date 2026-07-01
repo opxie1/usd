@@ -122,7 +122,8 @@ def variable_table():
     df = pd.read_csv(os.path.join(CAT, "variable_catalog.csv"), dtype=str, keep_default_na=False)
     df = df[df["status"] == "primary"]
     lines = [
-        "\\begin{longtable}{@{}l p{5.7cm} p{2.7cm} p{3.1cm} l@{}}",
+        "{\\footnotesize\\setlength{\\tabcolsep}{4pt}",
+        "\\begin{longtable}{@{}l p{5.3cm} p{2.4cm} p{2.7cm} l@{}}",
         "\\caption{Variables, units, and sources. All series were retrieved from FRED (Federal Reserve Bank of St.\\ Louis); ``Source'' gives the originating agency. Coverage is the first and last year available.}\\label{tab:variables}\\\\",
         "\\toprule",
         "Series ID & Description & Units & Source & Coverage \\\\",
@@ -147,17 +148,18 @@ def variable_table():
             cov = f"{r['obs_start'][:4]}--{r['obs_end'][:4]}"
             src = SRC.get(r["name"], "FRED")
             lines.append(" & ".join([esc(r["fred_id"]), esc(r["title"]), esc(r["units"]), src, cov]) + " \\\\")
-    lines.append("\\end{longtable}")
+    lines.append("\\end{longtable}}")
     return "\n".join(lines)
 
 
-def tbl(fname, cols, headers, caption, label, colspec, fmt=None, filt=None):
+def tbl(fname, cols, headers, caption, label, colspec, fmt=None, filt=None, size="\\small"):
     fmt = fmt or {}
     df = read(fname)
     if filt is not None:
         df = filt(df)
     df = df[cols]
-    lines = ["\\begin{table}[htbp]", "\\centering", "\\small",
+    tight = "\\setlength{\\tabcolsep}{4pt}" if size == "\\footnotesize" else ""
+    lines = ["\\begin{table}[htbp]", "\\centering", size, tight,
              f"\\caption{{{caption}}}", f"\\label{{{label}}}",
              f"\\begin{{tabular}}{{{colspec}}}", "\\toprule",
              " & ".join(headers) + " \\\\", "\\midrule"]
@@ -174,12 +176,12 @@ def main():
         "task1_var_summary.csv",
         ["measure", "sample", "n_obs", "lag_aic", "granger_money_to_infl_p", "granger_infl_to_money_p",
          "fevd_money_share_h12", "irf_peak_infl_resp"],
-        ["Measure", "Sample", "$N$", "Lags", "$p$: money$\\to\\pi$", "$p$: $\\pi\\to$money",
-         "FEVD money", "IRF peak"],
-        "Money supply and inflation: trivariate VAR of real output growth, growth of M2 less the monetary base, and inflation. The $p$-values are Granger-causality tests; the FEVD share is the fraction of inflation forecast-error variance at horizon~12 attributable to a money-growth shock.",
+        ["Measure", "Sample", "$N$", "Lags", "$p$: $m\\!\\to\\!\\pi$", "$p$: $\\pi\\!\\to\\!m$",
+         "FEVD $m$", "IRF peak"],
+        "Money supply and inflation: trivariate VAR of real output growth, growth of M2 less the monetary base ($m$), and inflation ($\\pi$). The $p$-values are Granger-causality tests; the FEVD share is the fraction of inflation forecast-error variance at horizon~12 attributable to a money-growth shock.",
         "tab:task1", "llrrrrrr",
         fmt={"granger_money_to_infl_p": "p", "granger_infl_to_money_p": "p",
-             "fevd_money_share_h12": "f3", "irf_peak_infl_resp": "f3"}))
+             "fevd_money_share_h12": "f3", "irf_peak_infl_resp": "f3"}, size="\\footnotesize"))
 
     parts.append(tbl(
         "task1_unit_roots.csv",
@@ -281,7 +283,7 @@ def main():
         ["Equation", "Coefficient", "Innovation s.d.", "Verdict"],
         "Time-varying-coefficient constancy: the estimated random-walk innovation standard deviation of each coefficient. A value of zero means the coefficient is effectively constant.",
         "tab:constancy", "llll",
-        fmt={"state_innovation_sd": "f3"}))
+        fmt={"state_innovation_sd": "f3"}, size="\\footnotesize"))
 
     parts.append(tbl(
         "task_robustness_fragility.csv",
