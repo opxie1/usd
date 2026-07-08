@@ -159,7 +159,7 @@ def tbl(fname, cols, headers, caption, label, colspec, fmt=None, filt=None, size
         df = filt(df)
     df = df[cols]
     tight = "\\setlength{\\tabcolsep}{4pt}" if size == "\\footnotesize" else ""
-    lines = ["\\begin{table}[htbp]", "\\centering", size, tight,
+    lines = ["\\begin{table}[htbp]", "\\centering", "\\setlength{\\belowcaptionskip}{8pt}", size, tight,
              f"\\caption{{{caption}}}", f"\\label{{{label}}}",
              f"\\begin{{tabular}}{{{colspec}}}", "\\toprule",
              " & ".join(headers) + " \\\\", "\\midrule"]

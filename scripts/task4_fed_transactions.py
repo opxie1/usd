@@ -105,7 +105,7 @@ def main():
                 for k, v in disp.items():
                     t = t.replace(k, v)
                 ax.set_title(t)
-            fig.suptitle("Orthogonalized responses to a Fed securities-growth shock, 2003--2026", fontsize=11)
+            fig.suptitle("Orthogonalized responses to a Fed securities-growth shock, 2003–2026", fontsize=11)
             fig.tight_layout()
             fig.savefig(os.path.join(FIG, "task4_irf_fed_shock.png"), dpi=150)
             plt.close(fig)
