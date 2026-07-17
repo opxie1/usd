@@ -107,6 +107,22 @@ def main():
                 fig.tight_layout()
                 fig.savefig(os.path.join(FIG, fname), dpi=150)
                 plt.close(fig)
+            names = list(res.names)
+            rate_disp = {"d_rate_mortgage": "mortgage", "d_rate_business": "business"}
+            money_irf_rows = []
+            for imp, label in rate_disp.items():
+                fig = irf.plot(orth=True, impulse=imp, response="money_g")
+                for ax in fig.axes:
+                    ax.set_title(f"{label.capitalize()}-rate shock to money growth")
+                fig.suptitle("Orthogonalized impulse response, differenced implied-rate VAR", fontsize=11)
+                fig.tight_layout()
+                fig.savefig(os.path.join(FIG, f"task23_irf_money_from_{label}.png"), dpi=150)
+                plt.close(fig)
+                oi = irf.orth_irfs[:, names.index("money_g"), names.index(imp)]
+                money_irf_rows.append(dict(impulse=label, **{f"h{h}": round(float(oi[h]), 4) for h in range(13)}))
+            pd.DataFrame(money_irf_rows).to_csv(os.path.join(TAB, "task23_irf_money_from_rates.csv"), index=False)
+            print("=== money_g orthogonalized IRF to rate shocks (h=0..12) ===")
+            print(pd.DataFrame(money_irf_rows).to_string(index=False))
         print(f"=== {name}: differenced implied-rate VAR({meta['lag_aic']}), n={meta['n_obs']}, stable={meta['stable']}, min|root|={meta['min_root_modulus']} ===")
         print(mat.to_string())
         print(f"joint federal -> others p={meta['joint_federal_to_others_p']}; joint others -> federal p={meta['joint_others_to_federal_p']}; resid whiteness p={meta['resid_whiteness_p']}")

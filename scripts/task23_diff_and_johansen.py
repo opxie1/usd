@@ -115,6 +115,13 @@ def main():
     ]
     pd.DataFrame(vecm_rows).to_csv(os.path.join(TAB, "task23_market_vecm_granger.csv"), index=False)
 
+    alpha = pd.DataFrame(vecm.alpha, index=mrates, columns=[f"alpha_ec{i+1}" for i in range(rank)])
+    beta = pd.DataFrame(vecm.beta, index=mrates, columns=[f"beta_ec{i+1}" for i in range(rank)])
+    ab = pd.concat([alpha, beta], axis=1)
+    ab.rename_axis("variable").to_csv(os.path.join(TAB, "task23_market_vecm_alpha_beta.csv"))
+    print("\n=== MARKET VECM alpha (adjustment) and beta (cointegrating vectors, Johansen normalization) ===")
+    print(ab.round(4).to_string())
+
     jo = pd.DataFrame(jo_all)
     jo.to_csv(os.path.join(TAB, "task23_johansen_rates_levels_diffs.csv"), index=False)
     diag = pd.DataFrame(diag_all)
