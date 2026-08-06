@@ -1,0 +1,169 @@
+measure,sample,policy_control,regressor,n_obs,sum_coef,joint_p
+cpi,full 1959-2026,none,mortgage,236,0.0787,0.219
+cpi,full 1959-2026,none,consumer,236,0.0417,0.0103
+cpi,full 1959-2026,none,federal,236,0.0132,0.8874
+cpi,full 1959-2026,base money,mortgage,236,0.0924,0.1405
+cpi,full 1959-2026,base money,consumer,236,0.0309,0.0085
+cpi,full 1959-2026,base money,federal,236,-0.0381,0.8581
+cpi,full 1959-2026,base money,BASE MONEY,236,0.0457,0.0
+cpi,full 1959-2026,funds rate,mortgage,236,0.0871,0.2337
+cpi,full 1959-2026,funds rate,consumer,236,0.0292,0.0206
+cpi,full 1959-2026,funds rate,federal,236,0.0347,0.7551
+cpi,full 1959-2026,funds rate,FUNDS RATE,236,0.9374,0.0099
+cpi,full 1959-2026,funds rate + 10y,mortgage,236,0.0838,0.35
+cpi,full 1959-2026,funds rate + 10y,consumer,236,0.0256,0.0186
+cpi,full 1959-2026,funds rate + 10y,federal,236,0.0341,0.7962
+cpi,full 1959-2026,funds rate + 10y,FUNDS RATE,236,0.9225,0.0104
+cpi,full 1959-2026,funds rate + 10y,10Y YIELD,236,0.0048,0.0502
+cpi,full 1959-2026,base + funds rate,mortgage,236,0.0978,0.1583
+cpi,full 1959-2026,base + funds rate,consumer,236,0.0234,0.0208
+cpi,full 1959-2026,base + funds rate,federal,236,-0.0163,0.964
+cpi,full 1959-2026,base + funds rate,BASE MONEY,236,0.0406,0.0001
+cpi,full 1959-2026,base + funds rate,FUNDS RATE,236,0.765,0.0072
+cpi,post-1981,none,mortgage,173,0.0864,0.2914
+cpi,post-1981,none,consumer,173,-0.0303,0.0393
+cpi,post-1981,none,federal,173,0.0504,0.5207
+cpi,post-1981,base money,mortgage,173,0.0942,0.184
+cpi,post-1981,base money,consumer,173,-0.0303,0.0292
+cpi,post-1981,base money,federal,173,0.0219,0.8182
+cpi,post-1981,base money,BASE MONEY,173,0.0211,0.0162
+cpi,post-1981,funds rate,mortgage,173,0.0922,0.2616
+cpi,post-1981,funds rate,consumer,173,-0.0342,0.0341
+cpi,post-1981,funds rate,federal,173,0.0621,0.3897
+cpi,post-1981,funds rate,FUNDS RATE,173,0.4248,0.6207
+cpi,post-1981,funds rate + 10y,mortgage,173,0.0933,0.2702
+cpi,post-1981,funds rate + 10y,consumer,173,-0.0291,0.0306
+cpi,post-1981,funds rate + 10y,federal,173,0.0656,0.3007
+cpi,post-1981,funds rate + 10y,FUNDS RATE,173,0.2629,0.7693
+cpi,post-1981,funds rate + 10y,10Y YIELD,173,0.5062,0.5238
+cpi,post-1981,base + funds rate,mortgage,173,0.0973,0.1182
+cpi,post-1981,base + funds rate,consumer,173,-0.0313,0.0325
+cpi,post-1981,base + funds rate,federal,173,0.0305,0.7546
+cpi,post-1981,base + funds rate,BASE MONEY,173,0.0195,0.0265
+cpi,post-1981,base + funds rate,FUNDS RATE,173,0.2808,0.6708
+cpi,post-1981 pre-2008,none,mortgage,100,0.0232,0.8313
+cpi,post-1981 pre-2008,none,consumer,100,-0.0279,0.1373
+cpi,post-1981 pre-2008,none,federal,100,0.0254,0.3249
+cpi,post-1981 pre-2008,base money,mortgage,100,0.0237,0.7664
+cpi,post-1981 pre-2008,base money,consumer,100,-0.0231,0.0954
+cpi,post-1981 pre-2008,base money,federal,100,0.0408,0.1985
+cpi,post-1981 pre-2008,base money,BASE MONEY,100,-0.0827,0.3339
+cpi,post-1981 pre-2008,funds rate,mortgage,100,0.0173,0.6772
+cpi,post-1981 pre-2008,funds rate,consumer,100,-0.0297,0.2162
+cpi,post-1981 pre-2008,funds rate,federal,100,0.0364,0.3056
+cpi,post-1981 pre-2008,funds rate,FUNDS RATE,100,0.434,0.3547
+cpi,post-1981 pre-2008,funds rate + 10y,mortgage,100,0.0046,0.7789
+cpi,post-1981 pre-2008,funds rate + 10y,consumer,100,-0.026,0.224
+cpi,post-1981 pre-2008,funds rate + 10y,federal,100,0.0508,0.2904
+cpi,post-1981 pre-2008,funds rate + 10y,FUNDS RATE,100,0.4163,0.613
+cpi,post-1981 pre-2008,funds rate + 10y,10Y YIELD,100,0.356,0.5662
+cpi,post-1981 pre-2008,base + funds rate,mortgage,100,0.0241,0.403
+cpi,post-1981 pre-2008,base + funds rate,consumer,100,-0.0183,0.1703
+cpi,post-1981 pre-2008,base + funds rate,federal,100,0.0411,0.2055
+cpi,post-1981 pre-2008,base + funds rate,BASE MONEY,100,-0.0878,0.1116
+cpi,post-1981 pre-2008,base + funds rate,FUNDS RATE,100,0.3136,0.0855
+cpi,pre-2008,none,mortgage,163,0.0655,0.295
+cpi,pre-2008,none,consumer,163,0.0311,0.0125
+cpi,pre-2008,none,federal,163,-0.0511,0.2504
+cpi,pre-2008,base money,mortgage,163,0.065,0.2632
+cpi,pre-2008,base money,consumer,163,0.0284,0.0098
+cpi,pre-2008,base money,federal,163,-0.0546,0.2266
+cpi,pre-2008,base money,BASE MONEY,163,0.0269,0.3755
+cpi,pre-2008,funds rate,mortgage,163,0.0372,0.4087
+cpi,pre-2008,funds rate,consumer,163,0.0342,0.0247
+cpi,pre-2008,funds rate,federal,163,-0.0375,0.3946
+cpi,pre-2008,funds rate,FUNDS RATE,163,0.2405,0.0003
+cpi,pre-2008,funds rate + 10y,mortgage,163,0.0268,0.6072
+cpi,pre-2008,funds rate + 10y,consumer,163,0.0305,0.0379
+cpi,pre-2008,funds rate + 10y,federal,163,-0.0415,0.3499
+cpi,pre-2008,funds rate + 10y,FUNDS RATE,163,0.303,0.0218
+cpi,pre-2008,funds rate + 10y,10Y YIELD,163,-0.52,0.0428
+cpi,pre-2008,base + funds rate,mortgage,163,0.0373,0.3782
+cpi,pre-2008,base + funds rate,consumer,163,0.0316,0.0218
+cpi,pre-2008,base + funds rate,federal,163,-0.0379,0.3772
+cpi,pre-2008,base + funds rate,BASE MONEY,163,0.0202,0.6538
+cpi,pre-2008,base + funds rate,FUNDS RATE,163,0.2885,0.0009
+pce,full 1959-2026,none,mortgage,236,0.0468,0.4092
+pce,full 1959-2026,none,consumer,236,0.0243,0.0308
+pce,full 1959-2026,none,federal,236,0.0225,0.8699
+pce,full 1959-2026,base money,mortgage,236,0.0564,0.2977
+pce,full 1959-2026,base money,consumer,236,0.0157,0.0292
+pce,full 1959-2026,base money,federal,236,-0.0153,0.9627
+pce,full 1959-2026,base money,BASE MONEY,236,0.0329,0.0
+pce,full 1959-2026,funds rate,mortgage,236,0.0533,0.5026
+pce,full 1959-2026,funds rate,consumer,236,0.0167,0.0495
+pce,full 1959-2026,funds rate,federal,236,0.0376,0.6338
+pce,full 1959-2026,funds rate,FUNDS RATE,236,0.5239,0.2552
+pce,full 1959-2026,funds rate + 10y,mortgage,236,0.0543,0.479
+pce,full 1959-2026,funds rate + 10y,consumer,236,0.0156,0.0592
+pce,full 1959-2026,funds rate + 10y,federal,236,0.0389,0.6022
+pce,full 1959-2026,funds rate + 10y,FUNDS RATE,236,0.47,0.5452
+pce,full 1959-2026,funds rate + 10y,10Y YIELD,236,0.1124,0.4518
+pce,full 1959-2026,base + funds rate,mortgage,236,0.0607,0.356
+pce,full 1959-2026,base + funds rate,consumer,236,0.0104,0.056
+pce,full 1959-2026,base + funds rate,federal,236,-0.0015,0.9889
+pce,full 1959-2026,base + funds rate,BASE MONEY,236,0.0311,0.0
+pce,full 1959-2026,base + funds rate,FUNDS RATE,236,0.4038,0.3645
+pce,post-1981,none,mortgage,173,0.0628,0.2125
+pce,post-1981,none,consumer,173,-0.0275,0.0169
+pce,post-1981,none,federal,173,0.0475,0.0754
+pce,post-1981,base money,mortgage,173,0.0684,0.1292
+pce,post-1981,base money,consumer,173,-0.0265,0.015
+pce,post-1981,base money,federal,173,0.0234,0.3044
+pce,post-1981,base money,BASE MONEY,173,0.016,0.0011
+pce,post-1981,funds rate,mortgage,173,0.0651,0.1904
+pce,post-1981,funds rate,consumer,173,-0.0312,0.0159
+pce,post-1981,funds rate,federal,173,0.0564,0.0647
+pce,post-1981,funds rate,FUNDS RATE,173,0.2256,0.8079
+pce,post-1981,funds rate + 10y,mortgage,173,0.0669,0.1839
+pce,post-1981,funds rate + 10y,consumer,173,-0.0271,0.019
+pce,post-1981,funds rate + 10y,federal,173,0.0607,0.0451
+pce,post-1981,funds rate + 10y,FUNDS RATE,173,0.0209,0.7778
+pce,post-1981,funds rate + 10y,10Y YIELD,173,0.5288,0.4097
+pce,post-1981,base + funds rate,mortgage,173,0.0691,0.0812
+pce,post-1981,base + funds rate,consumer,173,-0.029,0.0182
+pce,post-1981,base + funds rate,federal,173,0.0304,0.3307
+pce,post-1981,base + funds rate,BASE MONEY,173,0.0155,0.0009
+pce,post-1981,base + funds rate,FUNDS RATE,173,0.1382,0.8021
+pce,post-1981 pre-2008,none,mortgage,100,0.0395,0.5408
+pce,post-1981 pre-2008,none,consumer,100,-0.0153,0.1332
+pce,post-1981 pre-2008,none,federal,100,0.0274,0.154
+pce,post-1981 pre-2008,base money,mortgage,100,0.0364,0.5931
+pce,post-1981 pre-2008,base money,consumer,100,-0.0119,0.1826
+pce,post-1981 pre-2008,base money,federal,100,0.0428,0.661
+pce,post-1981 pre-2008,base money,BASE MONEY,100,-0.0454,0.1885
+pce,post-1981 pre-2008,funds rate,mortgage,100,0.0349,0.6683
+pce,post-1981 pre-2008,funds rate,consumer,100,-0.0197,0.2005
+pce,post-1981 pre-2008,funds rate,federal,100,0.0416,0.1552
+pce,post-1981 pre-2008,funds rate,FUNDS RATE,100,0.2114,0.8727
+pce,post-1981 pre-2008,funds rate + 10y,mortgage,100,0.0317,0.6646
+pce,post-1981 pre-2008,funds rate + 10y,consumer,100,-0.0171,0.1833
+pce,post-1981 pre-2008,funds rate + 10y,federal,100,0.0519,0.0738
+pce,post-1981 pre-2008,funds rate + 10y,FUNDS RATE,100,0.0773,0.9634
+pce,post-1981 pre-2008,funds rate + 10y,10Y YIELD,100,0.4063,0.6175
+pce,post-1981 pre-2008,base + funds rate,mortgage,100,0.0352,0.5342
+pce,post-1981 pre-2008,base + funds rate,consumer,100,-0.0152,0.2219
+pce,post-1981 pre-2008,base + funds rate,federal,100,0.05,0.6365
+pce,post-1981 pre-2008,base + funds rate,BASE MONEY,100,-0.039,0.1569
+pce,post-1981 pre-2008,base + funds rate,FUNDS RATE,100,0.182,0.9113
+pce,pre-2008,none,mortgage,163,0.0175,0.9497
+pce,pre-2008,none,consumer,163,0.016,0.0046
+pce,pre-2008,none,federal,163,-0.019,0.6858
+pce,pre-2008,base money,mortgage,163,0.0168,0.9461
+pce,pre-2008,base money,consumer,163,0.0137,0.0022
+pce,pre-2008,base money,federal,163,-0.0208,0.5695
+pce,pre-2008,base money,BASE MONEY,163,0.0159,0.0321
+pce,pre-2008,funds rate,mortgage,163,0.0107,0.9847
+pce,pre-2008,funds rate,consumer,163,0.0177,0.0104
+pce,pre-2008,funds rate,federal,163,-0.0215,0.5292
+pce,pre-2008,funds rate,FUNDS RATE,163,-0.0386,0.093
+pce,pre-2008,funds rate + 10y,mortgage,163,0.0124,0.8984
+pce,pre-2008,funds rate + 10y,consumer,163,0.0142,0.0104
+pce,pre-2008,funds rate + 10y,federal,163,-0.0266,0.2597
+pce,pre-2008,funds rate + 10y,FUNDS RATE,163,-0.0649,0.5304
+pce,pre-2008,funds rate + 10y,10Y YIELD,163,-0.2458,0.5052
+pce,pre-2008,base + funds rate,mortgage,163,0.0106,0.9715
+pce,pre-2008,base + funds rate,consumer,163,0.0149,0.0072
+pce,pre-2008,base + funds rate,federal,163,-0.0205,0.5953
+pce,pre-2008,base + funds rate,BASE MONEY,163,0.0131,0.0547
+pce,pre-2008,base + funds rate,FUNDS RATE,163,-0.002,0.1422

@@ -1,0 +1,33 @@
+sample,taylor_inflation,n_obs,credit,sum_coef,joint_p
+full 1959-2026,cpi,236,mortgage,0.0161,0.4468
+full 1959-2026,cpi,236,consumer,0.0036,0.7301
+full 1959-2026,cpi,236,federal,-0.0007,0.7244
+full 1959-2026,cpi,236,ALL THREE (joint),,0.7749
+full 1959-2026,pce,236,mortgage,0.0118,0.4322
+full 1959-2026,pce,236,consumer,0.0037,0.7687
+full 1959-2026,pce,236,federal,0.0015,0.5412
+full 1959-2026,pce,236,ALL THREE (joint),,0.8029
+post-1981,cpi,173,mortgage,0.0042,0.0314
+post-1981,cpi,173,consumer,-0.0067,0.4801
+post-1981,cpi,173,federal,0.0043,0.9266
+post-1981,cpi,173,ALL THREE (joint),,0.063
+post-1981,pce,173,mortgage,0.0043,0.0222
+post-1981,pce,173,consumer,-0.0065,0.384
+post-1981,pce,173,federal,0.0036,0.8928
+post-1981,pce,173,ALL THREE (joint),,0.0557
+post-1981 pre-2008,cpi,100,mortgage,0.0102,0.6025
+post-1981 pre-2008,cpi,100,consumer,-0.0187,0.1763
+post-1981 pre-2008,cpi,100,federal,0.0072,0.1272
+post-1981 pre-2008,cpi,100,ALL THREE (joint),,0.017
+post-1981 pre-2008,pce,100,mortgage,0.0121,0.4417
+post-1981 pre-2008,pce,100,consumer,-0.0184,0.2216
+post-1981 pre-2008,pce,100,federal,0.0073,0.0712
+post-1981 pre-2008,pce,100,ALL THREE (joint),,0.0086
+pre-2008,cpi,163,mortgage,0.0637,0.2109
+pre-2008,cpi,163,consumer,-0.0009,0.6916
+pre-2008,cpi,163,federal,-0.0439,0.308
+pre-2008,cpi,163,ALL THREE (joint),,0.6501
+pre-2008,pce,163,mortgage,0.055,0.181
+pre-2008,pce,163,consumer,-0.0084,0.7035
+pre-2008,pce,163,federal,-0.0388,0.2994
+pre-2008,pce,163,ALL THREE (joint),,0.6362

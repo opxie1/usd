@@ -1,0 +1,7 @@
+measure,credit,n_obs,coef_pre_1982,change_after_1982,coef_post_1982,p_change_is_zero
+cpi,mortgage,236,0.4105,-0.3243,0.0862,0.0014
+cpi,consumer,236,0.0014,-0.0284,-0.0271,0.7929
+cpi,federal,236,-0.2254,0.2382,0.0128,0.2739
+pce,mortgage,236,0.1355,-0.0754,0.0602,0.0128
+pce,consumer,236,0.0865,-0.1109,-0.0244,0.0113
+pce,federal,236,-0.0162,0.0429,0.0267,0.9062
