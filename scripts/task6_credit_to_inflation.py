@@ -79,22 +79,22 @@ def predictive_ols(d, measure, sample, start, end, lags, controls):
     yv = dat[y]
     Xv = sm.add_constant(dat.drop(columns=[y]))
     res = sm.OLS(yv, Xv).fit(cov_type="HAC", cov_kwds={"maxlags": lags + 2})
+    tag = "base+output" if len(controls) > 1 else ("base" if controls else "none")
     rows = []
-    for c in CREDIT:
+    for c in CREDIT + controls:
         names = [f"{c}_L{L}" for L in range(1, lags + 1)]
         w_test = res.f_test(" = 0, ".join(names) + " = 0")
         rows.append(dict(
-            measure=measure, sample=sample, lags=lags,
-            controls="base+output" if len(controls) > 1 else ("base" if controls else "none"),
-            regressor=c.replace("g_", ""), n_obs=int(res.nobs),
+            measure=measure, sample=sample, lags=lags, controls=tag,
+            regressor=c.replace("g_", "").replace("base_g", "BASE MONEY").replace("gdp_g", "output"),
+            n_obs=int(res.nobs),
             sum_coef=round(float(sum(res.params[n] for n in names)), 4),
             joint_p=round(float(w_test.pvalue), 4),
         ))
     names_all = [f"{c}_L{L}" for c in CREDIT for L in range(1, lags + 1)]
     joint = res.f_test(" = 0, ".join(names_all) + " = 0")
     rows.append(dict(
-        measure=measure, sample=sample, lags=lags,
-        controls="base+output" if len(controls) > 1 else ("base" if controls else "none"),
+        measure=measure, sample=sample, lags=lags, controls=tag,
         regressor="ALL THREE (joint)", n_obs=int(res.nobs),
         sum_coef=np.nan, joint_p=round(float(joint.pvalue), 4),
     ))
