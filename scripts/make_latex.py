@@ -273,7 +273,7 @@ def main():
         "task7_structural_break.csv",
         ["series", "sup_wald", "break_quarter", "bootstrap_p", "n_obs"],
         ["Series", "sup-Wald", "Break", "Bootstrap $p$", "$N$"],
-        "Quandt--Andrews sup-Wald test for a structural break in the money-inflation relation, with a residual-bootstrap $p$-value and fifteen percent trimming. The dominant break is the early-1980s regime change, not 2020.",
+        "Quandt--Andrews sup-Wald test for a structural break in the money-inflation relation, with a residual-bootstrap $p$-value and fifteen percent trimming. The dominant break is the early-1980s regime change. Fifteen percent trimming ends the candidate window well before 2020, so the test cannot detect a break at the pandemic.",
         "tab:break", "lrlrr",
         fmt={"sup_wald": "f2", "bootstrap_p": "p"}))
 
