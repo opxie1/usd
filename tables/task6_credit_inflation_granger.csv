@@ -1,0 +1,49 @@
+measure,sample,n_obs,lags,causing,caused,granger_p
+cpi,full_1959_2026,240,4,mortgage,inflation,0.0887
+cpi,full_1959_2026,240,4,consumer,inflation,0.0361
+cpi,full_1959_2026,240,4,federal,inflation,0.8473
+cpi,full_1959_2026,240,4,ALL THREE (joint),inflation,0.0629
+cpi,post_1981_break,177,3,mortgage,inflation,0.0719
+cpi,post_1981_break,177,3,consumer,inflation,0.0583
+cpi,post_1981_break,177,3,federal,inflation,0.9187
+cpi,post_1981_break,177,3,ALL THREE (joint),inflation,0.0963
+cpi,pre_covid_1959_2019,215,4,mortgage,inflation,0.1638
+cpi,pre_covid_1959_2019,215,4,consumer,inflation,0.0545
+cpi,pre_covid_1959_2019,215,4,federal,inflation,0.266
+cpi,pre_covid_1959_2019,215,4,ALL THREE (joint),inflation,0.0623
+pce,full_1959_2026,240,4,mortgage,inflation,0.2723
+pce,full_1959_2026,240,4,consumer,inflation,0.1066
+pce,full_1959_2026,240,4,federal,inflation,0.973
+pce,full_1959_2026,240,4,ALL THREE (joint),inflation,0.2698
+pce,post_1981_break,177,3,mortgage,inflation,0.1203
+pce,post_1981_break,177,3,consumer,inflation,0.0634
+pce,post_1981_break,177,3,federal,inflation,0.621
+pce,post_1981_break,177,3,ALL THREE (joint),inflation,0.1093
+pce,pre_covid_1959_2019,215,4,mortgage,inflation,0.403
+pce,pre_covid_1959_2019,215,4,consumer,inflation,0.1178
+pce,pre_covid_1959_2019,215,4,federal,inflation,0.6985
+pce,pre_covid_1959_2019,215,4,ALL THREE (joint),inflation,0.2787
+ppi,full_1959_2026,240,4,mortgage,inflation,0.0937
+ppi,full_1959_2026,240,4,consumer,inflation,0.109
+ppi,full_1959_2026,240,4,federal,inflation,0.2267
+ppi,full_1959_2026,240,4,ALL THREE (joint),inflation,0.0817
+ppi,post_1981_break,177,3,mortgage,inflation,0.3158
+ppi,post_1981_break,177,3,consumer,inflation,0.0125
+ppi,post_1981_break,177,3,federal,inflation,0.3041
+ppi,post_1981_break,177,3,ALL THREE (joint),inflation,0.0476
+ppi,pre_covid_1959_2019,215,4,mortgage,inflation,0.094
+ppi,pre_covid_1959_2019,215,4,consumer,inflation,0.2305
+ppi,pre_covid_1959_2019,215,4,federal,inflation,0.046
+ppi,pre_covid_1959_2019,215,4,ALL THREE (joint),inflation,0.0486
+gdpdef,full_1959_2026,240,4,mortgage,inflation,0.537
+gdpdef,full_1959_2026,240,4,consumer,inflation,0.3271
+gdpdef,full_1959_2026,240,4,federal,inflation,0.3185
+gdpdef,full_1959_2026,240,4,ALL THREE (joint),inflation,0.4102
+gdpdef,post_1981_break,177,3,mortgage,inflation,0.3399
+gdpdef,post_1981_break,177,3,consumer,inflation,0.0524
+gdpdef,post_1981_break,177,3,federal,inflation,0.0632
+gdpdef,post_1981_break,177,3,ALL THREE (joint),inflation,0.0397
+gdpdef,pre_covid_1959_2019,215,4,mortgage,inflation,0.7623
+gdpdef,pre_covid_1959_2019,215,4,consumer,inflation,0.375
+gdpdef,pre_covid_1959_2019,215,4,federal,inflation,0.4592
+gdpdef,pre_covid_1959_2019,215,4,ALL THREE (joint),inflation,0.6418

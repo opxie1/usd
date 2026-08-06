@@ -1,0 +1,13 @@
+measure,sample,fevd_mortgage,fevd_consumer,fevd_federal
+cpi,full_1959_2026,0.1169,0.0651,0.0164
+cpi,post_1981_break,0.0495,0.0302,0.0354
+cpi,pre_covid_1959_2019,0.1098,0.0567,0.021
+pce,full_1959_2026,0.1142,0.0518,0.0186
+pce,post_1981_break,0.065,0.0278,0.0526
+pce,pre_covid_1959_2019,0.1015,0.0439,0.0172
+ppi,full_1959_2026,0.0349,0.0344,0.0336
+ppi,post_1981_break,0.0112,0.0636,0.0244
+ppi,pre_covid_1959_2019,0.0407,0.0366,0.0567
+gdpdef,full_1959_2026,0.0726,0.0119,0.025
+gdpdef,post_1981_break,0.0707,0.0361,0.0601
+gdpdef,pre_covid_1959_2019,0.0563,0.0065,0.0454

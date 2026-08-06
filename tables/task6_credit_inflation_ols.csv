@@ -1,0 +1,289 @@
+measure,sample,lags,controls,regressor,n_obs,sum_coef,joint_p
+cpi,full_1959_2026,2,none,mortgage,238,0.0854,0.0343
+cpi,full_1959_2026,2,none,consumer,238,0.0276,0.0428
+cpi,full_1959_2026,2,none,federal,238,0.0145,0.8996
+cpi,full_1959_2026,2,none,ALL THREE (joint),238,,0.0205
+cpi,full_1959_2026,2,base,mortgage,238,0.0907,0.0235
+cpi,full_1959_2026,2,base,consumer,238,0.0287,0.0276
+cpi,full_1959_2026,2,base,federal,238,-0.0054,0.9682
+cpi,full_1959_2026,2,base,ALL THREE (joint),238,,0.017
+cpi,full_1959_2026,2,base+output,mortgage,238,0.0958,0.0251
+cpi,full_1959_2026,2,base+output,consumer,238,0.0432,0.0301
+cpi,full_1959_2026,2,base+output,federal,238,-0.0055,0.9859
+cpi,full_1959_2026,2,base+output,ALL THREE (joint),238,,0.0515
+cpi,full_1959_2026,4,none,mortgage,236,0.0703,0.1181
+cpi,full_1959_2026,4,none,consumer,236,0.0338,0.0103
+cpi,full_1959_2026,4,none,federal,236,0.016,0.8514
+cpi,full_1959_2026,4,none,ALL THREE (joint),236,,0.0069
+cpi,full_1959_2026,4,base,mortgage,236,0.092,0.0687
+cpi,full_1959_2026,4,base,consumer,236,0.038,0.0032
+cpi,full_1959_2026,4,base,federal,236,-0.0391,0.7886
+cpi,full_1959_2026,4,base,ALL THREE (joint),236,,0.0052
+cpi,full_1959_2026,4,base+output,mortgage,236,0.0924,0.1405
+cpi,full_1959_2026,4,base+output,consumer,236,0.0309,0.0085
+cpi,full_1959_2026,4,base+output,federal,236,-0.0381,0.8581
+cpi,full_1959_2026,4,base+output,ALL THREE (joint),236,,0.0622
+cpi,post_1981_break,2,none,mortgage,175,0.0844,0.0592
+cpi,post_1981_break,2,none,consumer,175,0.0167,0.0984
+cpi,post_1981_break,2,none,federal,175,0.0337,0.4693
+cpi,post_1981_break,2,none,ALL THREE (joint),175,,0.0758
+cpi,post_1981_break,2,base,mortgage,175,0.0831,0.0481
+cpi,post_1981_break,2,base,consumer,175,0.0176,0.0822
+cpi,post_1981_break,2,base,federal,175,0.0347,0.571
+cpi,post_1981_break,2,base,ALL THREE (joint),175,,0.0835
+cpi,post_1981_break,2,base+output,mortgage,175,0.0831,0.0577
+cpi,post_1981_break,2,base+output,consumer,175,0.0156,0.1418
+cpi,post_1981_break,2,base+output,federal,175,0.0387,0.4702
+cpi,post_1981_break,2,base+output,ALL THREE (joint),175,,0.1814
+cpi,post_1981_break,4,none,mortgage,173,0.0887,0.1869
+cpi,post_1981_break,4,none,consumer,173,-0.0214,0.0193
+cpi,post_1981_break,4,none,federal,173,0.0465,0.581
+cpi,post_1981_break,4,none,ALL THREE (joint),173,,0.0838
+cpi,post_1981_break,4,base,mortgage,173,0.0972,0.1204
+cpi,post_1981_break,4,base,consumer,173,-0.0153,0.0131
+cpi,post_1981_break,4,base,federal,173,0.0171,0.9538
+cpi,post_1981_break,4,base,ALL THREE (joint),173,,0.0859
+cpi,post_1981_break,4,base+output,mortgage,173,0.0942,0.184
+cpi,post_1981_break,4,base+output,consumer,173,-0.0303,0.0292
+cpi,post_1981_break,4,base+output,federal,173,0.0219,0.8182
+cpi,post_1981_break,4,base+output,ALL THREE (joint),173,,0.2543
+cpi,pre_covid_1959_2019,2,none,mortgage,213,0.0791,0.0152
+cpi,pre_covid_1959_2019,2,none,consumer,213,0.0292,0.0045
+cpi,pre_covid_1959_2019,2,none,federal,213,-0.0119,0.4091
+cpi,pre_covid_1959_2019,2,none,ALL THREE (joint),213,,0.0051
+cpi,pre_covid_1959_2019,2,base,mortgage,213,0.0846,0.0131
+cpi,pre_covid_1959_2019,2,base,consumer,213,0.0308,0.0018
+cpi,pre_covid_1959_2019,2,base,federal,213,-0.0271,0.3587
+cpi,pre_covid_1959_2019,2,base,ALL THREE (joint),213,,0.0038
+cpi,pre_covid_1959_2019,2,base+output,mortgage,213,0.0897,0.0155
+cpi,pre_covid_1959_2019,2,base+output,consumer,213,0.0527,0.0011
+cpi,pre_covid_1959_2019,2,base+output,federal,213,-0.0253,0.3833
+cpi,pre_covid_1959_2019,2,base+output,ALL THREE (joint),213,,0.0082
+cpi,pre_covid_1959_2019,4,none,mortgage,211,0.0654,0.0356
+cpi,pre_covid_1959_2019,4,none,consumer,211,0.0478,0.0003
+cpi,pre_covid_1959_2019,4,none,federal,211,-0.0193,0.3895
+cpi,pre_covid_1959_2019,4,none,ALL THREE (joint),211,,0.0004
+cpi,pre_covid_1959_2019,4,base,mortgage,211,0.0845,0.0448
+cpi,pre_covid_1959_2019,4,base,consumer,211,0.0481,0.0004
+cpi,pre_covid_1959_2019,4,base,federal,211,-0.0531,0.3658
+cpi,pre_covid_1959_2019,4,base,ALL THREE (joint),211,,0.0023
+cpi,pre_covid_1959_2019,4,base+output,mortgage,211,0.0793,0.1259
+cpi,pre_covid_1959_2019,4,base+output,consumer,211,0.0267,0.0016
+cpi,pre_covid_1959_2019,4,base+output,federal,211,-0.0502,0.4213
+cpi,pre_covid_1959_2019,4,base+output,ALL THREE (joint),211,,0.0252
+pce,full_1959_2026,2,none,mortgage,238,0.0551,0.0699
+pce,full_1959_2026,2,none,consumer,238,0.0117,0.1594
+pce,full_1959_2026,2,none,federal,238,0.0178,0.7012
+pce,full_1959_2026,2,none,ALL THREE (joint),238,,0.0397
+pce,full_1959_2026,2,base,mortgage,238,0.0587,0.0456
+pce,full_1959_2026,2,base,consumer,238,0.0118,0.1131
+pce,full_1959_2026,2,base,federal,238,0.0052,0.9531
+pce,full_1959_2026,2,base,ALL THREE (joint),238,,0.0308
+pce,full_1959_2026,2,base+output,mortgage,238,0.0609,0.0502
+pce,full_1959_2026,2,base+output,consumer,238,0.0181,0.1121
+pce,full_1959_2026,2,base+output,federal,238,0.0058,0.9682
+pce,full_1959_2026,2,base+output,ALL THREE (joint),238,,0.0467
+pce,full_1959_2026,4,none,mortgage,236,0.0431,0.2958
+pce,full_1959_2026,4,none,consumer,236,0.0241,0.028
+pce,full_1959_2026,4,none,federal,236,0.021,0.8092
+pce,full_1959_2026,4,none,ALL THREE (joint),236,,0.0258
+pce,full_1959_2026,4,base,mortgage,236,0.0578,0.1808
+pce,full_1959_2026,4,base,consumer,236,0.0267,0.0108
+pce,full_1959_2026,4,base,federal,236,-0.0189,0.8403
+pce,full_1959_2026,4,base,ALL THREE (joint),236,,0.0073
+pce,full_1959_2026,4,base+output,mortgage,236,0.0564,0.2977
+pce,full_1959_2026,4,base+output,consumer,236,0.0157,0.0292
+pce,full_1959_2026,4,base+output,federal,236,-0.0153,0.9627
+pce,full_1959_2026,4,base+output,ALL THREE (joint),236,,0.07
+pce,post_1981_break,2,none,mortgage,175,0.0532,0.1042
+pce,post_1981_break,2,none,consumer,175,0.0025,0.1562
+pce,post_1981_break,2,none,federal,175,0.0411,0.0874
+pce,post_1981_break,2,none,ALL THREE (joint),175,,0.0213
+pce,post_1981_break,2,base,mortgage,175,0.0518,0.0872
+pce,post_1981_break,2,base,consumer,175,0.003,0.1606
+pce,post_1981_break,2,base,federal,175,0.0444,0.1576
+pce,post_1981_break,2,base,ALL THREE (joint),175,,0.0501
+pce,post_1981_break,2,base+output,mortgage,175,0.0503,0.1119
+pce,post_1981_break,2,base+output,consumer,175,-0.0026,0.2198
+pce,post_1981_break,2,base+output,federal,175,0.0489,0.1111
+pce,post_1981_break,2,base+output,ALL THREE (joint),175,,0.0564
+pce,post_1981_break,4,none,mortgage,173,0.0634,0.1334
+pce,post_1981_break,4,none,consumer,173,-0.0255,0.012
+pce,post_1981_break,4,none,federal,173,0.049,0.0656
+pce,post_1981_break,4,none,ALL THREE (joint),173,,0.0111
+pce,post_1981_break,4,base,mortgage,173,0.0691,0.0858
+pce,post_1981_break,4,base,consumer,173,-0.021,0.0071
+pce,post_1981_break,4,base,federal,173,0.0234,0.6296
+pce,post_1981_break,4,base,ALL THREE (joint),173,,0.019
+pce,post_1981_break,4,base+output,mortgage,173,0.0684,0.1292
+pce,post_1981_break,4,base+output,consumer,173,-0.0265,0.015
+pce,post_1981_break,4,base+output,federal,173,0.0234,0.3044
+pce,post_1981_break,4,base+output,ALL THREE (joint),173,,0.0563
+pce,pre_covid_1959_2019,2,none,mortgage,213,0.0532,0.0498
+pce,pre_covid_1959_2019,2,none,consumer,213,0.0158,0.0272
+pce,pre_covid_1959_2019,2,none,federal,213,0.0019,0.7135
+pce,pre_covid_1959_2019,2,none,ALL THREE (joint),213,,0.0085
+pce,pre_covid_1959_2019,2,base,mortgage,213,0.0568,0.0352
+pce,pre_covid_1959_2019,2,base,consumer,213,0.0168,0.013
+pce,pre_covid_1959_2019,2,base,federal,213,-0.0087,0.6674
+pce,pre_covid_1959_2019,2,base,ALL THREE (joint),213,,0.0052
+pce,pre_covid_1959_2019,2,base+output,mortgage,213,0.0615,0.0385
+pce,pre_covid_1959_2019,2,base+output,consumer,213,0.0379,0.0069
+pce,pre_covid_1959_2019,2,base+output,federal,213,-0.0064,0.7068
+pce,pre_covid_1959_2019,2,base+output,ALL THREE (joint),213,,0.0109
+pce,pre_covid_1959_2019,4,none,mortgage,211,0.0405,0.174
+pce,pre_covid_1959_2019,4,none,consumer,211,0.0386,0.0024
+pce,pre_covid_1959_2019,4,none,federal,211,-0.002,0.7121
+pce,pre_covid_1959_2019,4,none,ALL THREE (joint),211,,0.0001
+pce,pre_covid_1959_2019,4,base,mortgage,211,0.0543,0.1292
+pce,pre_covid_1959_2019,4,base,consumer,211,0.0395,0.0026
+pce,pre_covid_1959_2019,4,base,federal,211,-0.0272,0.6199
+pce,pre_covid_1959_2019,4,base,ALL THREE (joint),211,,0.0012
+pce,pre_covid_1959_2019,4,base+output,mortgage,211,0.0489,0.3261
+pce,pre_covid_1959_2019,4,base+output,consumer,211,0.0143,0.0058
+pce,pre_covid_1959_2019,4,base+output,federal,211,-0.0216,0.6737
+pce,pre_covid_1959_2019,4,base+output,ALL THREE (joint),211,,0.0086
+ppi,full_1959_2026,2,none,mortgage,238,0.2272,0.2209
+ppi,full_1959_2026,2,none,consumer,238,0.0074,0.243
+ppi,full_1959_2026,2,none,federal,238,0.1647,0.2046
+ppi,full_1959_2026,2,none,ALL THREE (joint),238,,0.006
+ppi,full_1959_2026,2,base,mortgage,238,0.2514,0.1509
+ppi,full_1959_2026,2,base,consumer,238,0.0027,0.1943
+ppi,full_1959_2026,2,base,federal,238,0.1125,0.5335
+ppi,full_1959_2026,2,base,ALL THREE (joint),238,,0.0042
+ppi,full_1959_2026,2,base+output,mortgage,238,0.2511,0.1446
+ppi,full_1959_2026,2,base+output,consumer,238,-0.025,0.1155
+ppi,full_1959_2026,2,base+output,federal,238,0.1283,0.2698
+ppi,full_1959_2026,2,base+output,ALL THREE (joint),238,,0.0082
+ppi,full_1959_2026,4,none,mortgage,236,0.2505,0.2922
+ppi,full_1959_2026,4,none,consumer,236,-0.0576,0.0154
+ppi,full_1959_2026,4,none,federal,236,0.0813,0.5091
+ppi,full_1959_2026,4,none,ALL THREE (joint),236,,0.0013
+ppi,full_1959_2026,4,base,mortgage,236,0.3371,0.0979
+ppi,full_1959_2026,4,base,consumer,236,-0.0477,0.0172
+ppi,full_1959_2026,4,base,federal,236,-0.0923,0.2292
+ppi,full_1959_2026,4,base,ALL THREE (joint),236,,0.0008
+ppi,full_1959_2026,4,base+output,mortgage,236,0.3344,0.1193
+ppi,full_1959_2026,4,base+output,consumer,236,-0.0689,0.0128
+ppi,full_1959_2026,4,base+output,federal,236,-0.1013,0.0198
+ppi,full_1959_2026,4,base+output,ALL THREE (joint),236,,0.0016
+ppi,post_1981_break,2,none,mortgage,175,0.1403,0.5161
+ppi,post_1981_break,2,none,consumer,175,-0.0615,0.0958
+ppi,post_1981_break,2,none,federal,175,0.1629,0.3375
+ppi,post_1981_break,2,none,ALL THREE (joint),175,,0.0337
+ppi,post_1981_break,2,base,mortgage,175,0.1602,0.4205
+ppi,post_1981_break,2,base,consumer,175,-0.0586,0.0801
+ppi,post_1981_break,2,base,federal,175,0.1241,0.5806
+ppi,post_1981_break,2,base,ALL THREE (joint),175,,0.0399
+ppi,post_1981_break,2,base+output,mortgage,175,0.1395,0.4731
+ppi,post_1981_break,2,base+output,consumer,175,-0.1253,0.046
+ppi,post_1981_break,2,base+output,federal,175,0.172,0.2075
+ppi,post_1981_break,2,base+output,ALL THREE (joint),175,,0.0146
+ppi,post_1981_break,4,none,mortgage,173,0.2243,0.3035
+ppi,post_1981_break,4,none,consumer,173,-0.2324,0.0005
+ppi,post_1981_break,4,none,federal,173,0.1201,0.4023
+ppi,post_1981_break,4,none,ALL THREE (joint),173,,0.0006
+ppi,post_1981_break,4,base,mortgage,173,0.2927,0.1168
+ppi,post_1981_break,4,base,consumer,173,-0.1954,0.0006
+ppi,post_1981_break,4,base,federal,173,-0.0293,0.3712
+ppi,post_1981_break,4,base,ALL THREE (joint),173,,0.0015
+ppi,post_1981_break,4,base+output,mortgage,173,0.2858,0.1038
+ppi,post_1981_break,4,base+output,consumer,173,-0.2227,0.001
+ppi,post_1981_break,4,base+output,federal,173,-0.0455,0.02
+ppi,post_1981_break,4,base+output,ALL THREE (joint),173,,0.0008
+ppi,pre_covid_1959_2019,2,none,mortgage,213,0.2448,0.1737
+ppi,pre_covid_1959_2019,2,none,consumer,213,0.0323,0.078
+ppi,pre_covid_1959_2019,2,none,federal,213,0.0667,0.1323
+ppi,pre_covid_1959_2019,2,none,ALL THREE (joint),213,,0.0065
+ppi,pre_covid_1959_2019,2,base,mortgage,213,0.2578,0.1451
+ppi,pre_covid_1959_2019,2,base,consumer,213,0.0297,0.065
+ppi,pre_covid_1959_2019,2,base,federal,213,0.0424,0.1573
+ppi,pre_covid_1959_2019,2,base,ALL THREE (joint),213,,0.0036
+ppi,pre_covid_1959_2019,2,base+output,mortgage,213,0.2606,0.1502
+ppi,pre_covid_1959_2019,2,base+output,consumer,213,0.0788,0.0479
+ppi,pre_covid_1959_2019,2,base+output,federal,213,0.045,0.1571
+ppi,pre_covid_1959_2019,2,base+output,ALL THREE (joint),213,,0.0021
+ppi,pre_covid_1959_2019,4,none,mortgage,211,0.2729,0.1943
+ppi,pre_covid_1959_2019,4,none,consumer,211,-0.0183,0.0486
+ppi,pre_covid_1959_2019,4,none,federal,211,-0.0721,0.0177
+ppi,pre_covid_1959_2019,4,none,ALL THREE (joint),211,,0.0021
+ppi,pre_covid_1959_2019,4,base,mortgage,211,0.317,0.1208
+ppi,pre_covid_1959_2019,4,base,consumer,211,-0.0122,0.0556
+ppi,pre_covid_1959_2019,4,base,federal,211,-0.1481,0.0155
+ppi,pre_covid_1959_2019,4,base,ALL THREE (joint),211,,0.0034
+ppi,pre_covid_1959_2019,4,base+output,mortgage,211,0.3116,0.1107
+ppi,pre_covid_1959_2019,4,base+output,consumer,211,-0.0373,0.0644
+ppi,pre_covid_1959_2019,4,base+output,federal,211,-0.1363,0.0161
+ppi,pre_covid_1959_2019,4,base+output,ALL THREE (joint),211,,0.0009
+gdpdef,full_1959_2026,2,none,mortgage,238,0.0381,0.0268
+gdpdef,full_1959_2026,2,none,consumer,238,0.0019,0.4658
+gdpdef,full_1959_2026,2,none,federal,238,0.0007,0.0949
+gdpdef,full_1959_2026,2,none,ALL THREE (joint),238,,0.044
+gdpdef,full_1959_2026,2,base,mortgage,238,0.0398,0.0171
+gdpdef,full_1959_2026,2,base,consumer,238,0.0015,0.4269
+gdpdef,full_1959_2026,2,base,federal,238,-0.0026,0.1296
+gdpdef,full_1959_2026,2,base,ALL THREE (joint),238,,0.0518
+gdpdef,full_1959_2026,2,base+output,mortgage,238,0.0391,0.0253
+gdpdef,full_1959_2026,2,base+output,consumer,238,-0.0017,0.4681
+gdpdef,full_1959_2026,2,base+output,federal,238,-0.0014,0.2545
+gdpdef,full_1959_2026,2,base+output,ALL THREE (joint),238,,0.1207
+gdpdef,full_1959_2026,4,none,mortgage,236,0.0315,0.1928
+gdpdef,full_1959_2026,4,none,consumer,236,0.0098,0.4589
+gdpdef,full_1959_2026,4,none,federal,236,0.0048,0.2463
+gdpdef,full_1959_2026,4,none,ALL THREE (joint),236,,0.1305
+gdpdef,full_1959_2026,4,base,mortgage,236,0.0421,0.0663
+gdpdef,full_1959_2026,4,base,consumer,236,0.0123,0.4154
+gdpdef,full_1959_2026,4,base,federal,236,-0.0204,0.2114
+gdpdef,full_1959_2026,4,base,ALL THREE (joint),236,,0.1169
+gdpdef,full_1959_2026,4,base+output,mortgage,236,0.0351,0.1751
+gdpdef,full_1959_2026,4,base+output,consumer,236,-0.0058,0.5011
+gdpdef,full_1959_2026,4,base+output,federal,236,-0.0198,0.3663
+gdpdef,full_1959_2026,4,base+output,ALL THREE (joint),236,,0.2978
+gdpdef,post_1981_break,2,none,mortgage,175,0.0299,0.0507
+gdpdef,post_1981_break,2,none,consumer,175,-0.0113,0.2552
+gdpdef,post_1981_break,2,none,federal,175,0.0216,0.2993
+gdpdef,post_1981_break,2,none,ALL THREE (joint),175,,0.1236
+gdpdef,post_1981_break,2,base,mortgage,175,0.0286,0.0249
+gdpdef,post_1981_break,2,base,consumer,175,-0.012,0.2731
+gdpdef,post_1981_break,2,base,federal,175,0.0265,0.2321
+gdpdef,post_1981_break,2,base,ALL THREE (joint),175,,0.1284
+gdpdef,post_1981_break,2,base+output,mortgage,175,0.0253,0.0677
+gdpdef,post_1981_break,2,base+output,consumer,175,-0.0216,0.1535
+gdpdef,post_1981_break,2,base+output,federal,175,0.0302,0.2092
+gdpdef,post_1981_break,2,base+output,ALL THREE (joint),175,,0.0881
+gdpdef,post_1981_break,4,none,mortgage,173,0.0363,0.0685
+gdpdef,post_1981_break,4,none,consumer,173,-0.0252,0.11
+gdpdef,post_1981_break,4,none,federal,173,0.0278,0.546
+gdpdef,post_1981_break,4,none,ALL THREE (joint),173,,0.0749
+gdpdef,post_1981_break,4,base,mortgage,173,0.0395,0.004
+gdpdef,post_1981_break,4,base,consumer,173,-0.0211,0.0542
+gdpdef,post_1981_break,4,base,federal,173,0.0151,0.5324
+gdpdef,post_1981_break,4,base,ALL THREE (joint),173,,0.0264
+gdpdef,post_1981_break,4,base+output,mortgage,173,0.0345,0.0232
+gdpdef,post_1981_break,4,base+output,consumer,173,-0.0367,0.0739
+gdpdef,post_1981_break,4,base+output,federal,173,0.0154,0.4901
+gdpdef,post_1981_break,4,base+output,ALL THREE (joint),173,,0.0249
+gdpdef,pre_covid_1959_2019,2,none,mortgage,213,0.0354,0.0276
+gdpdef,pre_covid_1959_2019,2,none,consumer,213,0.0068,0.1257
+gdpdef,pre_covid_1959_2019,2,none,federal,213,-0.0211,0.3451
+gdpdef,pre_covid_1959_2019,2,none,ALL THREE (joint),213,,0.0535
+gdpdef,pre_covid_1959_2019,2,base,mortgage,213,0.034,0.0367
+gdpdef,pre_covid_1959_2019,2,base,consumer,213,0.0067,0.1497
+gdpdef,pre_covid_1959_2019,2,base,federal,213,-0.0187,0.4658
+gdpdef,pre_covid_1959_2019,2,base,ALL THREE (joint),213,,0.0947
+gdpdef,pre_covid_1959_2019,2,base+output,mortgage,213,0.0349,0.0613
+gdpdef,pre_covid_1959_2019,2,base+output,consumer,213,0.0088,0.1893
+gdpdef,pre_covid_1959_2019,2,base+output,federal,213,-0.0184,0.4692
+gdpdef,pre_covid_1959_2019,2,base+output,ALL THREE (joint),213,,0.2669
+gdpdef,pre_covid_1959_2019,4,none,mortgage,211,0.0295,0.2354
+gdpdef,pre_covid_1959_2019,4,none,consumer,211,0.0228,0.1722
+gdpdef,pre_covid_1959_2019,4,none,federal,211,-0.0268,0.4233
+gdpdef,pre_covid_1959_2019,4,none,ALL THREE (joint),211,,0.0997
+gdpdef,pre_covid_1959_2019,4,base,mortgage,211,0.0326,0.1499
+gdpdef,pre_covid_1959_2019,4,base,consumer,211,0.0246,0.2171
+gdpdef,pre_covid_1959_2019,4,base,federal,211,-0.0325,0.4444
+gdpdef,pre_covid_1959_2019,4,base,ALL THREE (joint),211,,0.0879
+gdpdef,pre_covid_1959_2019,4,base+output,mortgage,211,0.0213,0.469
+gdpdef,pre_covid_1959_2019,4,base+output,consumer,211,-0.0055,0.5923
+gdpdef,pre_covid_1959_2019,4,base+output,federal,211,-0.0339,0.4282
+gdpdef,pre_covid_1959_2019,4,base+output,ALL THREE (joint),211,,0.3863
